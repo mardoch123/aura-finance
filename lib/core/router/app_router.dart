@@ -4,8 +4,21 @@ import 'package:go_router/go_router.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
 import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
+import '../../features/scanner/presentation/screens/scanner_screen.dart';
+import '../../features/dashboard/presentation/screens/dashboard_screen.dart';
+import '../../features/transactions/presentation/screens/transactions_screen.dart';
+import '../../features/transactions/presentation/screens/add_transaction_screen.dart';
+import '../../features/transactions/presentation/screens/transaction_detail_screen.dart';
+import '../../features/insights/presentation/screens/insights_screen.dart';
+import '../../features/profile/presentation/screens/profile_screen.dart';
+import '../../features/profile/presentation/screens/settings_screen.dart';
+import '../../features/subscriptions/presentation/screens/subscriptions_screen.dart';
+import '../../features/accounts/presentation/screens/accounts_screen.dart';
+import '../../features/budgets/presentation/screens/budgets_screen.dart';
+import '../../features/coach/presentation/coach_chat_screen.dart';
 import '../../features/auth/presentation/auth_controller.dart';
 import '../../features/onboarding/presentation/onboarding_controller.dart';
+import '../widgets/main_scaffold.dart';
 
 /// Routes de l'application Aura Finance
 class AppRoutes {
@@ -93,7 +106,7 @@ class AppRouter {
         ShellRoute(
           navigatorKey: _shellNavigatorKey,
           builder: (context, state, child) {
-            return Placeholder(); // TODO: MainScaffold(child: child)
+            return MainScaffold(child: child);
           },
           routes: [
             // Dashboard
@@ -102,7 +115,7 @@ class AppRouter {
               name: 'dashboard',
               pageBuilder: (context, state) => CustomTransitionPage(
                 key: state.pageKey,
-                child: const Placeholder(), // TODO: DashboardScreen
+                child: const DashboardScreen(),
                 transitionsBuilder: _fadeTransition,
               ),
             ),
@@ -112,24 +125,9 @@ class AppRouter {
               name: 'transactions',
               pageBuilder: (context, state) => CustomTransitionPage(
                 key: state.pageKey,
-                child: const Placeholder(), // TODO: TransactionsScreen
+                child: const TransactionsScreen(),
                 transitionsBuilder: _fadeTransition,
               ),
-              routes: [
-                GoRoute(
-                  path: ':id',
-                  name: 'transaction-detail',
-                  parentNavigatorKey: _rootNavigatorKey,
-                  pageBuilder: (context, state) {
-                    final id = state.pathParameters['id']!;
-                    return CustomTransitionPage(
-                      key: state.pageKey,
-                      child: Placeholder(), // TODO: TransactionDetailScreen(id: id)
-                      transitionsBuilder: _slideUpTransition,
-                    );
-                  },
-                ),
-              ],
             ),
             // Scan (center button)
             GoRoute(
@@ -138,7 +136,7 @@ class AppRouter {
               parentNavigatorKey: _rootNavigatorKey,
               pageBuilder: (context, state) => CustomTransitionPage(
                 key: state.pageKey,
-                child: const Placeholder(), // TODO: ScanScreen
+                child: const ScannerScreen(),
                 transitionsBuilder: _scaleTransition,
                 fullscreenDialog: true,
               ),
@@ -149,7 +147,7 @@ class AppRouter {
               name: 'insights',
               pageBuilder: (context, state) => CustomTransitionPage(
                 key: state.pageKey,
-                child: const Placeholder(), // TODO: InsightsScreen
+                child: const InsightsScreen(),
                 transitionsBuilder: _fadeTransition,
               ),
             ),
@@ -159,7 +157,7 @@ class AppRouter {
               name: 'profile',
               pageBuilder: (context, state) => CustomTransitionPage(
                 key: state.pageKey,
-                child: const Placeholder(), // TODO: ProfileScreen
+                child: const ProfileScreen(),
                 transitionsBuilder: _fadeTransition,
               ),
             ),
@@ -175,10 +173,23 @@ class AppRouter {
           parentNavigatorKey: _rootNavigatorKey,
           pageBuilder: (context, state) => CustomTransitionPage(
             key: state.pageKey,
-            child: const Placeholder(), // TODO: AddTransactionScreen
+            child: const AddTransactionScreen(),
             transitionsBuilder: _slideUpTransition,
             fullscreenDialog: true,
           ),
+        ),
+        GoRoute(
+          path: AppRoutes.transactionDetail,
+          name: 'transaction-detail',
+          parentNavigatorKey: _rootNavigatorKey,
+          pageBuilder: (context, state) {
+            final id = state.pathParameters['id']!;
+            return CustomTransitionPage(
+              key: state.pageKey,
+              child: TransactionDetailScreen(transactionId: id),
+              transitionsBuilder: _slideUpTransition,
+            );
+          },
         ),
         GoRoute(
           path: AppRoutes.subscriptions,
@@ -186,7 +197,7 @@ class AppRouter {
           parentNavigatorKey: _rootNavigatorKey,
           pageBuilder: (context, state) => CustomTransitionPage(
             key: state.pageKey,
-            child: const Placeholder(), // TODO: SubscriptionsScreen
+            child: const SubscriptionsScreen(),
             transitionsBuilder: _slideRightTransition,
           ),
         ),
@@ -196,7 +207,7 @@ class AppRouter {
           parentNavigatorKey: _rootNavigatorKey,
           pageBuilder: (context, state) => CustomTransitionPage(
             key: state.pageKey,
-            child: const Placeholder(), // TODO: CoachScreen
+            child: const CoachChatScreen(),
             transitionsBuilder: _slideRightTransition,
           ),
         ),
@@ -206,7 +217,7 @@ class AppRouter {
           parentNavigatorKey: _rootNavigatorKey,
           pageBuilder: (context, state) => CustomTransitionPage(
             key: state.pageKey,
-            child: const Placeholder(), // TODO: SettingsScreen
+            child: const SettingsScreen(),
             transitionsBuilder: _slideRightTransition,
           ),
         ),
@@ -216,7 +227,7 @@ class AppRouter {
           parentNavigatorKey: _rootNavigatorKey,
           pageBuilder: (context, state) => CustomTransitionPage(
             key: state.pageKey,
-            child: const Placeholder(), // TODO: AccountsScreen
+            child: const AccountsScreen(),
             transitionsBuilder: _slideRightTransition,
           ),
         ),
@@ -226,7 +237,7 @@ class AppRouter {
           parentNavigatorKey: _rootNavigatorKey,
           pageBuilder: (context, state) => CustomTransitionPage(
             key: state.pageKey,
-            child: const Placeholder(), // TODO: BudgetsScreen
+            child: const BudgetsScreen(),
             transitionsBuilder: _slideRightTransition,
           ),
         ),

@@ -1,0 +1,26 @@
+# Configuration de l'Edge Function coach-chat
+# 
+# Cette fonction utilise DeepSeek en priorité avec OpenAI (GPT-4o) en fallback
+#
+# Variables d'environnement requises :
+# - DEEPSEEK_API_KEY : Clé API DeepSeek (prioritaire)
+# - OPENAI_API_KEY : Clé API OpenAI (fallback)
+# - SUPABASE_URL : URL Supabase (auto-configuré)
+# - SUPABASE_SERVICE_ROLE_KEY : Clé service Supabase (auto-configuré)
+#
+# Modèles utilisés :
+# - DeepSeek : deepseek-chat (ou deepseek-reasoner pour le raisonnement)
+# - OpenAI : gpt-4o
+#
+# Ordre de priorité :
+# 1. DeepSeek API (si DEEPSEEK_API_KEY est défini et fonctionne)
+# 2. OpenAI API (fallback si DeepSeek échoue)
+# 3. Erreur (si aucune clé n'est disponible)
+
+[functions.coach-chat]
+enabled = true
+verify_jwt = true
+
+[functions.coach-chat.secrets]
+DEEPSEEK_API_KEY = ""
+OPENAI_API_KEY = ""

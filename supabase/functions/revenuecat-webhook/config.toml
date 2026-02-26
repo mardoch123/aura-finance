@@ -1,0 +1,6 @@
+[functions.revenuecat-webhook]
+enabled = true
+verify_jwt = false  # Le webhook est appelé par RevenueCat, pas par un utilisateur
+
+[functions.revenuecat-webhook.secrets]
+REVENUECAT_WEBHOOK_SECRET = ""

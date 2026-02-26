@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'core/ads/ads_initializer.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/aura_theme.dart';
+import 'features/subscription/subscription_provider.dart';
 import 'services/supabase_service.dart';
 import 'services/notification_service.dart';
 
@@ -26,8 +28,14 @@ void main() async {
     ),
   );
   
-  // Initialisation des services
+  // Initialisation des services (ordre important)
+  // 1. Supabase (authentification et base de données)
   await SupabaseService.instance.initialize();
+  
+  // 2. Publicités et achats in-app (UMP, AdMob, RevenueCat)
+  await adsInitializer.initialize();
+  
+  // 3. Notifications
   await NotificationService.instance.initialize();
   
   runApp(

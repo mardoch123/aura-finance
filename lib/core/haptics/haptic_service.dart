@@ -1,5 +1,6 @@
-import 'package:flutter/services.dart';
 import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 /// Service de retours haptiques pour Aura Finance
 /// Fournit des vibrations subtiles pour enrichir l'expérience utilisateur

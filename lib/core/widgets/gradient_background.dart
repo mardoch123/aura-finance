@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../theme/aura_colors.dart';
-import '../theme/aura_dimensions.dart';
 
 /// Widget de fond avec dégradé animé
 ///

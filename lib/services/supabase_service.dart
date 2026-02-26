@@ -65,6 +65,6 @@ extension SupabaseQueryExtension on SupabaseQueryBuilder {
     if (userId == null) {
       throw Exception('User not authenticated');
     }
-    return eq('user_id', userId);
+    return filter('user_id', 'eq', userId);
   }
 }

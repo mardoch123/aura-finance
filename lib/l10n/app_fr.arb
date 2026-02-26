@@ -1,0 +1,252 @@
+{
+  "@@locale": "fr",
+  "appName": "Aura Finance",
+  "@appName": {
+    "description": "Nom de l'application"
+  },
+  
+  "welcome": "Bienvenue",
+  "@welcome": {
+    "description": "Message de bienvenue"
+  },
+  
+  "login": "Connexion",
+  "@login": {
+    "description": "Bouton de connexion"
+  },
+  
+  "register": "S'inscrire",
+  "@register": {
+    "description": "Bouton d'inscription"
+  },
+  
+  "email": "Email",
+  "@email": {
+    "description": "Label email"
+  },
+  
+  "password": "Mot de passe",
+  "@password": {
+    "description": "Label mot de passe"
+  },
+  
+  "forgotPassword": "Mot de passe oublié ?",
+  "@forgotPassword": {
+    "description": "Lien mot de passe oublié"
+  },
+  
+  "fullName": "Nom complet",
+  "@fullName": {
+    "description": "Label nom complet"
+  },
+  
+  "confirmPassword": "Confirmer le mot de passe",
+  "@confirmPassword": {
+    "description": "Label confirmation mot de passe"
+  },
+  
+  "dashboard": "Tableau de bord",
+  "@dashboard": {
+    "description": "Titre du tableau de bord"
+  },
+  
+  "transactions": "Transactions",
+  "@transactions": {
+    "description": "Titre des transactions"
+  },
+  
+  "addTransaction": "Ajouter une transaction",
+  "@addTransaction": {
+    "description": "Bouton ajouter transaction"
+  },
+  
+  "scan": "Scanner",
+  "@scan": {
+    "description": "Bouton scanner"
+  },
+  
+  "insights": "Insights",
+  "@insights": {
+    "description": "Titre des insights"
+  },
+  
+  "profile": "Profil",
+  "@profile": {
+    "description": "Titre du profil"
+  },
+  
+  "settings": "Paramètres",
+  "@settings": {
+    "description": "Titre des paramètres"
+  },
+  
+  "logout": "Déconnexion",
+  "@logout": {
+    "description": "Bouton déconnexion"
+  },
+  
+  "balance": "Solde",
+  "@balance": {
+    "description": "Label solde"
+  },
+  
+  "income": "Revenus",
+  "@income": {
+    "description": "Label revenus"
+  },
+  
+  "expenses": "Dépenses",
+  "@expenses": {
+    "description": "Label dépenses"
+  },
+  
+  "subscriptions": "Abonnements",
+  "@subscriptions": {
+    "description": "Label abonnements"
+  },
+  
+  "vampireDetected": "Vampire détecté !",
+  "@vampireDetected": {
+    "description": "Alerte vampire"
+  },
+  
+  "coach": "Coach",
+  "@coach": {
+    "description": "Titre du coach"
+  },
+  
+  "askCoach": "Poser une question au coach...",
+  "@askCoach": {
+    "description": "Placeholder coach"
+  },
+  
+  "save": "Enregistrer",
+  "@save": {
+    "description": "Bouton enregistrer"
+  },
+  
+  "cancel": "Annuler",
+  "@cancel": {
+    "description": "Bouton annuler"
+  },
+  
+  "delete": "Supprimer",
+  "@delete": {
+    "description": "Bouton supprimer"
+  },
+  
+  "edit": "Modifier",
+  "@edit": {
+    "description": "Bouton modifier"
+  },
+  
+  "search": "Rechercher",
+  "@search": {
+    "description": "Label recherche"
+  },
+  
+  "filter": "Filtrer",
+  "@filter": {
+    "description": "Bouton filtrer"
+  },
+  
+  "sort": "Trier",
+  "@sort": {
+    "description": "Bouton trier"
+  },
+  
+  "category": "Catégorie",
+  "@category": {
+    "description": "Label catégorie"
+  },
+  
+  "date": "Date",
+  "@date": {
+    "description": "Label date"
+  },
+  
+  "amount": "Montant",
+  "@amount": {
+    "description": "Label montant"
+  },
+  
+  "description": "Description",
+  "@description": {
+    "description": "Label description"
+  },
+  
+  "merchant": "Marchand",
+  "@merchant": {
+    "description": "Label marchand"
+  },
+  
+  "continueWithGoogle": "Continuer avec Google",
+  "@continueWithGoogle": {
+    "description": "Bouton Google"
+  },
+  
+  "continueWithApple": "Continuer avec Apple",
+  "@continueWithApple": {
+    "description": "Bouton Apple"
+  },
+  
+  "or": "ou",
+  "@or": {
+    "description": "Séparateur"
+  },
+  
+  "noAccount": "Pas encore de compte ?",
+  "@noAccount": {
+    "description": "Texte pas de compte"
+  },
+  
+  "hasAccount": "Déjà un compte ?",
+  "@hasAccount": {
+    "description": "Texte déjà compte"
+  },
+  
+  "onboardingTitle1": "Votre argent, enfin visible",
+  "@onboardingTitle1": {
+    "description": "Titre onboarding 1"
+  },
+  
+  "onboardingDesc1": "Scannez vos tickets, suivez vos dépenses automatiquement avec l'IA.",
+  "@onboardingDesc1": {
+    "description": "Description onboarding 1"
+  },
+  
+  "onboardingTitle2": "Prédisez votre avenir",
+  "@onboardingTitle2": {
+    "description": "Titre onboarding 2"
+  },
+  
+  "onboardingDesc2": "L'IA analyse vos habitudes et prédit votre solde sur 30 jours.",
+  "@onboardingDesc2": {
+    "description": "Description onboarding 2"
+  },
+  
+  "onboardingTitle3": "Chassez les vampires",
+  "@onboardingTitle3": {
+    "description": "Titre onboarding 3"
+  },
+  
+  "onboardingDesc3": "Détection automatique des hausses de prix cachées sur vos abonnements.",
+  "@onboardingDesc3": {
+    "description": "Description onboarding 3"
+  },
+  
+  "getStarted": "Commencer",
+  "@getStarted": {
+    "description": "Bouton commencer"
+  },
+  
+  "next": "Suivant",
+  "@next": {
+    "description": "Bouton suivant"
+  },
+  
+  "skip": "Passer",
+  "@skip": {
+    "description": "Bouton passer"
+  }
+}

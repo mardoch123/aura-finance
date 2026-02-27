@@ -17,23 +17,23 @@ class AdConfig {
   static const String _testInterstitialId = 'ca-app-pub-3940256099942544/1033173712';
   static const String _testRewardedId = 'ca-app-pub-3940256099942544/5224354917';
 
-  // ═══════════════════════════════════════════════════════════
-  // IDs ANDROID (à remplacer par vos vrais IDs)
-  // ═══════════════════════════════════════════════════════════
-  
-  static const String _androidBannerDashboard = 'ca-app-pub-XXXX/BANNER_DASH';
-  static const String _androidBannerTransactions = 'ca-app-pub-XXXX/BANNER_TRANS';
-  static const String _androidInterstitial = 'ca-app-pub-XXXX/INTERSTITIAL';
-  static const String _androidRewarded = 'ca-app-pub-XXXX/REWARDED';
+  //═══════════════════════════════════════════════════════════
+  // IDs ANDROID (REMPLACEZ PAR VOS VRAIS IDS AD MOB)
+  //═══════════════════════════════════════════════════════════
+    
+  static const String _androidBannerDashboard = 'ca-app-pub-YOUR_ANDROID_ID/BANNER_DASH';
+  static const String _androidBannerTransactions = 'ca-app-pub-YOUR_ANDROID_ID/BANNER_TRANS';
+  static const String _androidInterstitial = 'ca-app-pub-YOUR_ANDROID_ID/INTERSTITIAL';
+  static const String _androidRewarded = 'ca-app-pub-YOUR_ANDROID_ID/REWARDED';
 
   // ═══════════════════════════════════════════════════════════
-  // IDs iOS (à remplacer par vos vrais IDs)
+  // IDs iOS (REMPLACEZ PAR VOS VRAIS IDS AD MOB)
   // ═══════════════════════════════════════════════════════════
   
-  static const String _iosBannerDashboard = 'ca-app-pub-XXXX/IOS_BANNER_DASH';
-  static const String _iosBannerTransactions = 'ca-app-pub-XXXX/IOS_BANNER_TRANS';
-  static const String _iosInterstitial = 'ca-app-pub-XXXX/IOS_INTERSTITIAL';
-  static const String _iosRewarded = 'ca-app-pub-XXXX/IOS_REWARDED';
+  static const String _iosBannerDashboard = 'ca-app-pub-YOUR_IOS_ID/IOS_BANNER_DASH';
+  static const String _iosBannerTransactions = 'ca-app-pub-YOUR_IOS_ID/IOS_BANNER_TRANS';
+  static const String _iosInterstitial = 'ca-app-pub-YOUR_IOS_ID/IOS_INTERSTITIAL';
+  static const String _iosRewarded = 'ca-app-pub-YOUR_IOS_ID/IOS_REWARDED';
 
   // ═══════════════════════════════════════════════════════════
   // GETTERS PUBLICS
@@ -72,11 +72,11 @@ class AdConfig {
   // ═══════════════════════════════════════════════════════════
 
   /// Clé publique RevenueCat pour iOS
-  /// À remplacer par votre clé depuis le dashboard RevenueCat
+  /// REMPLACEZ PAR VOTRE CLÉ DEPUIS LE DASHBOARD REVENUECAT
   static const String revenueCatPublicKeyIOS = 'REVENUECAT_PUBLIC_SDK_KEY_IOS';
 
   /// Clé publique RevenueCat pour Android
-  /// À remplacer par votre clé depuis le dashboard RevenueCat
+  /// REMPLACEZ PAR VOTRE CLÉ DEPUIS LE DASHBOARD REVENUECAT
   static const String revenueCatPublicKeyAndroid = 'REVENUECAT_PUBLIC_SDK_KEY_ANDROID';
 
   /// ID de l'entitlement Pro

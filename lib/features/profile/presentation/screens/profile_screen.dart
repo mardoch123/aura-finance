@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../core/extensions/app_localizations_extension.dart';
 import '../../../../core/haptics/haptic_service.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/theme/aura_colors.dart';
@@ -76,7 +77,7 @@ class ProfileScreen extends ConsumerWidget {
           ),
           Expanded(
             child: Text(
-              'Profil',
+              context.l10n.profile,
               style: AuraTypography.h3.copyWith(color: AuraColors.auraTextDark),
               textAlign: TextAlign.center,
             ),
@@ -120,7 +121,7 @@ class ProfileScreen extends ConsumerWidget {
 
             // Nom
             Text(
-              user?.userMetadata?['full_name'] ?? 'Utilisateur',
+              user?.userMetadata?['full_name'] ?? context.l10n.user,
               style: AuraTypography.h3.copyWith(color: AuraColors.auraTextDark),
             ),
 
@@ -155,7 +156,7 @@ class ProfileScreen extends ConsumerWidget {
                     ),
                     const SizedBox(width: 4),
                     Text(
-                      'Email vérifié',
+                      context.l10n.emailVerified,
                       style: AuraTypography.labelSmall.copyWith(
                         color: AuraColors.auraGreen,
                       ),
@@ -200,15 +201,15 @@ class ProfileScreen extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  isPro ? 'Aura Pro' : 'Passer à Pro',
+                  isPro ? context.l10n.auraPro : context.l10n.upgradeToPro,
                   style: AuraTypography.h4.copyWith(
                     color: AuraColors.auraTextDark,
                   ),
                 ),
                 Text(
                   isPro
-                      ? 'Abonnement actif'
-                      : 'Débloquez toutes les fonctionnalités',
+                      ? context.l10n.proActive
+                      : context.l10n.unlockAllFeatures,
                   style: AuraTypography.bodySmall.copyWith(
                     color: AuraColors.auraTextDarkSecondary,
                   ),
@@ -227,7 +228,7 @@ class ProfileScreen extends ConsumerWidget {
                 borderRadius: BorderRadius.circular(AuraDimensions.radiusS),
               ),
               child: Text(
-                'Upgrade',
+                context.l10n.upgrade,
                 style: AuraTypography.labelSmall.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
@@ -243,37 +244,42 @@ class ProfileScreen extends ConsumerWidget {
     final menuItems = [
       _MenuItem(
         icon: Icons.account_balance_wallet,
-        label: 'Mes comptes',
+        label: context.l10n.myAccounts,
         onTap: () => context.goToAccounts(),
       ),
       _MenuItem(
         icon: Icons.flag,
-        label: 'Objectifs',
+        label: context.l10n.goals,
         onTap: () => context.goToBudgets(),
       ),
       _MenuItem(
         icon: Icons.subscriptions,
-        label: 'Abonnements',
+        label: context.l10n.subscriptions,
         onTap: () => context.goToSubscriptions(),
       ),
       _MenuItem(
-        icon: Icons.notifications,
-        label: 'Notifications',
-        onTap: () {}, // TODO: Écran notifications
+        icon: Icons.account_balance,
+        label: context.l10n.myBanks,
+        onTap: () => context.goToBanking(),
       ),
       _MenuItem(
-        icon: Icons.security,
-        label: 'Sécurité',
-        onTap: () {}, // TODO: Écran sécurité
+        icon: Icons.calculate_outlined,
+        label: context.l10n.calculator,
+        onTap: () => context.goToCalculators(),
+      ),
+      _MenuItem(
+        icon: Icons.privacy_tip_outlined,
+        label: context.l10n.privacy,
+        onTap: () => context.goToPrivacySettings(),
       ),
       _MenuItem(
         icon: Icons.help_outline,
-        label: 'Aide & Support',
+        label: context.l10n.helpSupport,
         onTap: () {}, // TODO: Aide
       ),
       _MenuItem(
         icon: Icons.logout,
-        label: 'Déconnexion',
+        label: context.l10n.logout,
         color: AuraColors.auraRed,
         onTap: () => _confirmLogout(context, ref),
       ),
@@ -326,11 +332,11 @@ class ProfileScreen extends ConsumerWidget {
           borderRadius: BorderRadius.circular(AuraDimensions.radiusXL),
         ),
         title: Text(
-          'Déconnexion',
+          context.l10n.logout,
           style: AuraTypography.h4.copyWith(color: AuraColors.auraTextDark),
         ),
         content: Text(
-          'Êtes-vous sûr de vouloir vous déconnecter ?',
+          context.l10n.logoutConfirm,
           style: AuraTypography.bodyMedium.copyWith(
             color: AuraColors.auraTextDarkSecondary,
           ),
@@ -339,7 +345,7 @@ class ProfileScreen extends ConsumerWidget {
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              'Annuler',
+              context.l10n.cancel,
               style: AuraTypography.labelMedium.copyWith(
                 color: AuraColors.auraTextDarkSecondary,
               ),
@@ -355,7 +361,7 @@ class ProfileScreen extends ConsumerWidget {
               backgroundColor: AuraColors.auraRed,
             ),
             child: Text(
-              'Déconnexion',
+              context.l10n.logout,
               style: AuraTypography.labelMedium.copyWith(color: Colors.white),
             ),
           ),

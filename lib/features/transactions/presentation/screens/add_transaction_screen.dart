@@ -7,9 +7,10 @@ import '../../../../core/haptics/haptic_service.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/theme/aura_colors.dart';
 import '../../../../core/theme/aura_dimensions.dart';
-import '../../../..//core/theme/aura_typography.dart';
+import '../../../../core/theme/aura_typography.dart';
 import '../../../../core/widgets/aura_button.dart';
 import '../../../../core/widgets/glass_card.dart';
+import '../../../../core/extensions/app_localizations_extension.dart';
 import '../../domain/transaction_model.dart';
 import '../providers/transactions_provider.dart';
 
@@ -35,17 +36,17 @@ class _AddTransactionScreenState extends ConsumerState<AddTransactionScreen> {
   String _selectedCategory = 'other';
   DateTime _selectedDate = DateTime.now();
 
-  final List<Map<String, dynamic>> _categories = [
-    {'id': 'food', 'name': 'Alimentation', 'icon': '🍽️'},
-    {'id': 'transport', 'name': 'Transport', 'icon': '🚗'},
-    {'id': 'housing', 'name': 'Logement', 'icon': '🏠'},
-    {'id': 'entertainment', 'name': 'Loisirs', 'icon': '🎬'},
-    {'id': 'shopping', 'name': 'Shopping', 'icon': '🛍️'},
-    {'id': 'health', 'name': 'Santé', 'icon': '💊'},
-    {'id': 'education', 'name': 'Éducation', 'icon': '📚'},
-    {'id': 'utilities', 'name': 'Factures', 'icon': '💡'},
-    {'id': 'salary', 'name': 'Salaire', 'icon': '💰'},
-    {'id': 'other', 'name': 'Autre', 'icon': '📦'},
+  List<Map<String, dynamic>> get _categories => [
+    {'id': 'food', 'name': context.l10n.categoryFood, 'icon': '🍽️'},
+    {'id': 'transport', 'name': context.l10n.categoryTransport, 'icon': '🚗'},
+    {'id': 'housing', 'name': context.l10n.categoryHousing, 'icon': '🏠'},
+    {'id': 'entertainment', 'name': context.l10n.categoryEntertainment, 'icon': '🎬'},
+    {'id': 'shopping', 'name': context.l10n.categoryShopping, 'icon': '🛍️'},
+    {'id': 'health', 'name': context.l10n.categoryHealth, 'icon': '💊'},
+    {'id': 'education', 'name': context.l10n.categoryEducation, 'icon': '📚'},
+    {'id': 'utilities', 'name': context.l10n.categoryUtilities, 'icon': '💡'},
+    {'id': 'salary', 'name': context.l10n.categorySalary, 'icon': '💰'},
+    {'id': 'other', 'name': context.l10n.categoryOther, 'icon': '📦'},
   ];
 
   @override
@@ -134,8 +135,8 @@ class _AddTransactionScreenState extends ConsumerState<AddTransactionScreen> {
                     // Marchand
                     _buildTextField(
                       controller: _merchantController,
-                      label: 'Marchand',
-                      hint: 'Nom du commerçant',
+                      label: context.l10n.merchant,
+                      hint: context.l10n.merchantHint,
                       icon: Icons.store,
                       onChanged: (value) {
                         ref.read(transactionFormNotifierProvider.notifier).setMerchant(value);
@@ -147,8 +148,8 @@ class _AddTransactionScreenState extends ConsumerState<AddTransactionScreen> {
                     // Description
                     _buildTextField(
                       controller: _descriptionController,
-                      label: 'Description',
-                      hint: 'Détails de la transaction',
+                      label: context.l10n.description,
+                      hint: context.l10n.descriptionHint,
                       icon: Icons.description,
                       maxLines: 3,
                       onChanged: (value) {
@@ -191,7 +192,7 @@ class _AddTransactionScreenState extends ConsumerState<AddTransactionScreen> {
 
                     // Bouton de validation
                     AuraButton(
-                      label: isEditing ? 'Enregistrer' : 'Ajouter la transaction',
+                      label: isEditing ? context.l10n.save : context.l10n.addTransaction,
                       onPressed: formState.isSubmitting ? null : _submit,
                       isLoading: formState.isSubmitting,
                       type: AuraButtonType.primary,
@@ -221,7 +222,7 @@ class _AddTransactionScreenState extends ConsumerState<AddTransactionScreen> {
           ),
           Expanded(
             child: Text(
-              isEditing ? 'Modifier' : 'Nouvelle transaction',
+              isEditing ? context.l10n.edit : context.l10n.newTransaction,
               style: AuraTypography.h3.copyWith(color: AuraColors.auraTextDark),
               textAlign: TextAlign.center,
             ),
@@ -251,7 +252,7 @@ class _AddTransactionScreenState extends ConsumerState<AddTransactionScreen> {
                   borderRadius: BorderRadius.circular(AuraDimensions.radiusM),
                 ),
                 child: Text(
-                  'Dépense',
+                  context.l10n.expense,
                   textAlign: TextAlign.center,
                   style: AuraTypography.labelLarge.copyWith(
                     color: _isExpense ? Colors.white : AuraColors.auraTextDark,
@@ -274,7 +275,7 @@ class _AddTransactionScreenState extends ConsumerState<AddTransactionScreen> {
                   borderRadius: BorderRadius.circular(AuraDimensions.radiusM),
                 ),
                 child: Text(
-                  'Revenu',
+                  context.l10n.revenue,
                   textAlign: TextAlign.center,
                   style: AuraTypography.labelLarge.copyWith(
                     color: !_isExpense ? Colors.white : AuraColors.auraTextDark,
@@ -294,7 +295,7 @@ class _AddTransactionScreenState extends ConsumerState<AddTransactionScreen> {
       child: Column(
         children: [
           Text(
-            'Montant',
+            context.l10n.amount,
             style: AuraTypography.labelMedium.copyWith(
               color: AuraColors.auraTextDarkSecondary,
             ),
@@ -341,7 +342,7 @@ class _AddTransactionScreenState extends ConsumerState<AddTransactionScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Catégorie',
+          context.l10n.category,
           style: AuraTypography.labelMedium.copyWith(
             color: AuraColors.auraTextDarkSecondary,
           ),
@@ -435,7 +436,7 @@ class _AddTransactionScreenState extends ConsumerState<AddTransactionScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Date',
+          context.l10n.date,
           style: AuraTypography.labelMedium.copyWith(
             color: AuraColors.auraTextDarkSecondary,
           ),

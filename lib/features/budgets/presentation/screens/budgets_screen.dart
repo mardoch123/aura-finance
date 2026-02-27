@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
+import '../../../../core/extensions/app_localizations_extension.dart';
 import '../../../../core/haptics/haptic_service.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/theme/aura_colors.dart';
@@ -61,7 +62,7 @@ class _BudgetsScreenState extends ConsumerState<BudgetsScreen> {
           ),
           Expanded(
             child: Text(
-              'Objectifs',
+              context.l10n.goals,
               style: AuraTypography.h3.copyWith(color: AuraColors.auraTextDark),
               textAlign: TextAlign.center,
             ),
@@ -93,7 +94,7 @@ class _BudgetsScreenState extends ConsumerState<BudgetsScreen> {
                     ),
                   ),
                   Text(
-                    'Objectifs',
+                    context.l10n.goals,
                     style: AuraTypography.bodySmall.copyWith(
                       color: AuraColors.auraTextDarkSecondary,
                     ),
@@ -115,7 +116,7 @@ class _BudgetsScreenState extends ConsumerState<BudgetsScreen> {
                     ),
                   ),
                   Text(
-                    'Atteints',
+                    context.l10n.achieved,
                     style: AuraTypography.bodySmall.copyWith(
                       color: AuraColors.auraTextDarkSecondary,
                     ),
@@ -137,7 +138,7 @@ class _BudgetsScreenState extends ConsumerState<BudgetsScreen> {
                     ),
                   ),
                   Text(
-                    'Progression',
+                    context.l10n.progress,
                     style: AuraTypography.bodySmall.copyWith(
                       color: AuraColors.auraTextDarkSecondary,
                     ),
@@ -192,12 +193,12 @@ class _BudgetsScreenState extends ConsumerState<BudgetsScreen> {
           ),
           const SizedBox(height: AuraDimensions.spaceL),
           Text(
-            'Aucun objectif',
+            context.l10n.noGoals,
             style: AuraTypography.h4.copyWith(color: AuraColors.auraTextDark),
           ),
           const SizedBox(height: AuraDimensions.spaceS),
           Text(
-            'Créez votre premier objectif d\'épargne',
+            context.l10n.createFirstGoal,
             style: AuraTypography.bodyMedium.copyWith(
               color: AuraColors.auraTextDarkSecondary,
             ),
@@ -216,7 +217,7 @@ class _BudgetsScreenState extends ConsumerState<BudgetsScreen> {
       backgroundColor: AuraColors.auraAmber,
       icon: const Icon(Icons.add, color: Colors.white),
       label: Text(
-        'Nouveau',
+        context.l10n.newGoal,
         style: AuraTypography.labelMedium.copyWith(color: Colors.white),
       ),
     );
@@ -370,7 +371,7 @@ class GoalCard extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 4),
                                 Text(
-                                  'Atteint',
+                                  context.l10n.reached,
                                   style: AuraTypography.caption.copyWith(
                                     color: AuraColors.auraGreen,
                                   ),
@@ -481,8 +482,10 @@ class GoalCard extends StatelessWidget {
                 const SizedBox(width: 6),
                 Text(
                   goal.isOverdue
-                      ? 'Deadline dépassée'
-                      : 'Reste ${goal.daysRemaining} jours',
+                      ? context.l10n.deadlineExceeded
+                      : (goal.daysRemaining == 1 
+                          ? context.l10n.daysRemaining_one.replaceAll('{count}', goal.daysRemaining.toString())
+                          : context.l10n.daysRemaining_other.replaceAll('{count}', goal.daysRemaining.toString())),
                   style: AuraTypography.caption.copyWith(
                     color: goal.isDeadlineNear || goal.isOverdue
                         ? AuraColors.auraRed

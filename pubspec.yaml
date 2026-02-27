@@ -78,6 +78,9 @@ dependencies:
 
   # Animations
   confetti: ^0.7.0
+  
+  # Audio
+  audioplayers: ^5.2.1
 
 dev_dependencies:
   flutter_test:
@@ -92,14 +95,21 @@ dev_dependencies:
   go_router_builder: ^2.4.1
   custom_lint: ^0.5.7
   riverpod_lint: ^2.3.7
+  
+  # App Icons
+  flutter_launcher_icons: ^0.13.1
 
 flutter:
   uses-material-design: true
+  
+  # Configuration de l'internationalisation
+  generate: true
   
   assets:
     - assets/images/
     - assets/icons/
     - assets/fonts/
+    - assets/sounds/
   
   fonts:
     - family: PlayfairDisplay
@@ -118,3 +128,13 @@ flutter:
           weight: 500
         - asset: assets/fonts/DMSans-Bold.ttf
           weight: 700
+
+# Configuration des icônes de l'application
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true
+  adaptive_icon_background: "#F5E6D0"
+  adaptive_icon_foreground: "assets/images/logo.png"

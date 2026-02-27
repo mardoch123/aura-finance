@@ -10,6 +10,7 @@ import '../../../../core/theme/aura_dimensions.dart';
 import '../../../../core/widgets/glass_card.dart';
 import '../../../../core/haptics/haptic_service.dart';
 import '../../../../core/animations/pulse_ring.dart';
+import '../../../../core/extensions/app_localizations_extension.dart';
 import '../../domain/transaction_draft.dart';
 import '../providers/scanner_provider.dart';
 import '../widgets/viewfinder_overlay.dart';
@@ -159,7 +160,7 @@ class _ScannerScreenState extends ConsumerState<ScannerScreen>
                       child: Text(
                         scannerState.errorMessage ??
                             scannerState.draft?.error ??
-                            'Une erreur est survenue',
+                            context.l10n.unknownError,
                         style: const TextStyle(
                           color: AuraColors.auraTextPrimary,
                         ),
@@ -204,7 +205,7 @@ class _ScannerScreenState extends ConsumerState<ScannerScreen>
                       ),
                       const SizedBox(width: AuraDimensions.spaceM),
                       Text(
-                        'Analyse en cours...',
+                        context.l10n.analysisInProgress,
                         style: TextStyle(
                           color: AuraColors.auraTextPrimary.withOpacity(0.9),
                         ),
@@ -281,8 +282,8 @@ class _ScannerScreenState extends ConsumerState<ScannerScreen>
     
     // Afficher un message de succès
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Transaction ajoutée avec succès !'),
+      SnackBar(
+        content: Text(context.l10n.transactionAdded),
         backgroundColor: AuraColors.auraGreen,
       ),
     );

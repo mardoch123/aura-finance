@@ -5,6 +5,7 @@ import '../../../../core/router/app_router.dart';
 import '../../../../core/theme/aura_colors.dart';
 import '../../../../core/theme/aura_dimensions.dart';
 import '../../../../core/widgets/aura_button.dart';
+import '../../../../core/extensions/app_localizations_extension.dart';
 import '../onboarding_controller.dart';
 import '../widgets/onboarding_progress_bar.dart';
 import '../slides/income_slide.dart';
@@ -147,7 +148,7 @@ class OnboardingScreen extends ConsumerWidget {
                         }
                       }
                     : null,
-            label: isLastStep ? 'Terminer' : 'Continuer',
+            label: isLastStep ? context.l10n.finish : context.l10n.continueButton,
             icon: isLastStep ? Icons.check_rounded : Icons.arrow_forward_rounded,
             isLoading: state.isLoading,
           ),

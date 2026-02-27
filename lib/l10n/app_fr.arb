@@ -90,6 +90,11 @@
     "description": "Label solde"
   },
   
+  "totalBalance": "Solde total",
+  "@totalBalance": {
+    "description": "Label solde total"
+  },
+  
   "income": "Revenus",
   "@income": {
     "description": "Label revenus"
@@ -190,6 +195,11 @@
     "description": "Bouton Apple"
   },
   
+  "continueWithEmail": "Continuer avec email",
+  "@continueWithEmail": {
+    "description": "Placeholder email"
+  },
+  
   "or": "ou",
   "@or": {
     "description": "Séparateur"
@@ -248,5 +258,1052 @@
   "skip": "Passer",
   "@skip": {
     "description": "Bouton passer"
+  },
+  
+  "quickActions": "Actions rapides",
+  "@quickActions": {
+    "description": "Titre actions rapides"
+  },
+  
+  "aiCoach": "Coach IA",
+  "@aiCoach": {
+    "description": "Label coach IA"
+  },
+  
+  "accounts": "Comptes",
+  "@accounts": {
+    "description": "Label comptes"
+  },
+  
+  "myAccounts": "Mes comptes",
+  "@myAccounts": {
+    "description": "Titre mes comptes"
+  },
+  
+  "goals": "Objectifs",
+  "@goals": {
+    "description": "Label objectifs"
+  },
+  
+  "shared": "Partagés",
+  "@shared": {
+    "description": "Label partagés"
+  },
+  
+  "sharedAccounts": "Comptes partagés",
+  "@sharedAccounts": {
+    "description": "Titre comptes partagés"
+  },
+  
+  "sharedAccountsDesc": "Gérez vos finances en couple, famille ou colocation",
+  "@sharedAccountsDesc": {
+    "description": "Description comptes partagés"
+  },
+  
+  "viewAll": "Voir tout",
+  "@viewAll": {
+    "description": "Bouton voir tout"
+  },
+  
+  "challenges": "Défis",
+  "@challenges": {
+    "description": "Label défis"
+  },
+  
+  "reports": "Rapports",
+  "@reports": {
+    "description": "Label rapports"
+  },
+  
+  "banking": "Banques",
+  "@banking": {
+    "description": "Label banques"
+  },
+  
+  "myBanks": "Mes banques",
+  "@myBanks": {
+    "description": "Titre mes banques"
+  },
+  
+  "referral": "Parrainage",
+  "@referral": {
+    "description": "Label parrainage"
+  },
+  
+  "travel": "Voyages",
+  "@travel": {
+    "description": "Label voyages"
+  },
+  
+  "reconciliation": "Rapproch.",
+  "@reconciliation": {
+    "description": "Label rapprochement"
+  },
+  
+  "calculators": "Calc.",
+  "@calculators": {
+    "description": "Label calculateurs"
+  },
+  
+  "calculatorTitle": "Calculateurs",
+  "@calculatorTitle": {
+    "description": "Titre calculateurs"
+  },
+  
+  "calculatorSubtitle": "Simulez vos projets financiers",
+  "@calculatorSubtitle": {
+    "description": "Sous-titre calculateurs"
+  },
+  
+  "wealth": "Patrimoine",
+  "@wealth": {
+    "description": "Label patrimoine"
+  },
+  
+  "investment": "Invest.",
+  "@investment": {
+    "description": "Label investissement"
+  },
+  
+  "retirement": "Retraite",
+  "@retirement": {
+    "description": "Label retraite"
+  },
+  
+  "more": "Plus",
+  "@more": {
+    "description": "Label plus"
+  },
+  
+  "aiInsights": "Insights IA",
+  "@aiInsights": {
+    "description": "Titre insights IA"
+  },
+  
+  "recentTransactions": "Transactions récentes",
+  "@recentTransactions": {
+    "description": "Titre transactions récentes"
+  },
+  
+  "totalBalanceLabel": "SOLDE TOTAL",
+  "@totalBalanceLabel": {
+    "description": "Label solde total en majuscules"
+  },
+  
+  "thisMonth": "ce mois",
+  "@thisMonth": {
+    "description": "Label ce mois"
+  },
+  
+  "errorOccurred": "Oups ! Une erreur est survenue",
+  "@errorOccurred": {
+    "description": "Message d'erreur"
+  },
+  
+  "retry": "Réessayer",
+  "@retry": {
+    "description": "Bouton réessayer"
+  },
+  
+  "noTransactions": "Aucune transaction",
+  "@noTransactions": {
+    "description": "Message aucune transaction"
+  },
+  
+  "addFirstTransaction": "Commencez par ajouter votre première transaction",
+  "@addFirstTransaction": {
+    "description": "Message ajouter première transaction"
+  },
+  
+  "add": "Ajouter",
+  "@add": {
+    "description": "Bouton ajouter"
+  },
+  
+  "newTransaction": "Nouvelle transaction",
+  "@newTransaction": {
+    "description": "Titre nouvelle transaction"
+  },
+  
+  "expense": "Dépense",
+  "@expense": {
+    "description": "Label dépense"
+  },
+  
+  "revenue": "Revenu",
+  "@revenue": {
+    "description": "Label revenu"
+  },
+  
+  "merchantHint": "Nom du commerçant",
+  "@merchantHint": {
+    "description": "Hint marchand"
+  },
+  
+  "descriptionHint": "Détails de la transaction",
+  "@descriptionHint": {
+    "description": "Hint description"
+  },
+  
+  "deleteTransaction": "Supprimer la transaction ?",
+  "@deleteTransaction": {
+    "description": "Titre confirmation suppression transaction"
+  },
+  
+  "deleteTransactionConfirm": "Cette action est irréversible.",
+  "@deleteTransactionConfirm": {
+    "description": "Confirmation suppression transaction"
+  },
+  
+  "searchTransaction": "Rechercher une transaction...",
+  "@searchTransaction": {
+    "description": "Placeholder recherche transaction"
+  },
+  
+  "noResults": "Aucun résultat",
+  "@noResults": {
+    "description": "Message aucun résultat"
+  },
+  
+  "searchError": "Erreur de recherche",
+  "@searchError": {
+    "description": "Message erreur recherche"
+  },
+  
+  "loadingError": "Erreur de chargement",
+  "@loadingError": {
+    "description": "Message erreur chargement"
+  },
+  
+  "analysisInProgress": "Analyse en cours...",
+  "@analysisInProgress": {
+    "description": "Message analyse en cours"
+  },
+  
+  "unknownError": "Une erreur est survenue",
+  "@unknownError": {
+    "description": "Message erreur inconnue"
+  },
+  
+  "transactionAdded": "Transaction ajoutée avec succès !",
+  "@transactionAdded": {
+    "description": "Message transaction ajoutée"
+  },
+  
+  "noAccountFound": "Aucun compte",
+  "@noAccountFound": {
+    "description": "Message aucun compte"
+  },
+  
+  "addFirstAccount": "Ajoutez votre premier compte bancaire",
+  "@addFirstAccount": {
+    "description": "Message ajouter premier compte"
+  },
+  
+  "primary": "Principal",
+  "@primary": {
+    "description": "Label compte principal"
+  },
+  
+  "noSubscription": "Aucun abonnement",
+  "@noSubscription": {
+    "description": "Message aucun abonnement"
+  },
+  
+  "addSubscriptionHint": "Ajoutez vos abonnements pour suivre les hausses de prix",
+  "@addSubscriptionHint": {
+    "description": "Message hint abonnements"
+  },
+  
+  "theGuardian": "Le Gardien",
+  "@theGuardian": {
+    "description": "Nom du Gardien"
+  },
+  
+  "theGuardianDesc": "Le Gardien surveille vos abonnements et détecte automatiquement les hausses de prix cachées. Vous recevez une alerte dès qu'un service augmente ses tarifs.",
+  "@theGuardianDesc": {
+    "description": "Description du Gardien"
+  },
+  
+  "understood": "Compris",
+  "@understood": {
+    "description": "Bouton compris"
+  },
+  
+  "vampiresDetected_one": "{count} vampire détecté",
+  "vampiresDetected_other": "{count} vampires détectés",
+  
+  "perMonth": "/mois",
+  "@perMonth": {
+    "description": "Label par mois"
+  },
+  
+  "perYear": "/an",
+  "@perYear": {
+    "description": "Label par an"
+  },
+  
+  "increases": "Hausses",
+  "@increases": {
+    "description": "Label hausses"
+  },
+  
+  "nextBilling": "Prochain prélèvement",
+  "@nextBilling": {
+    "description": "Label prochain prélèvement"
+  },
+  
+  "increaseDetected": "Hausse de {percentage}% détectée (+{amount}€)",
+  
+  "loginSubtitle": "Votre santé financière, réinventée",
+  "@loginSubtitle": {
+    "description": "Sous-titre login"
+  },
+  
+  "coachTitle": "Coach Aura",
+  "@coachTitle": {
+    "description": "Titre coach"
+  },
+  
+  "coachSubtitle": "Votre conseiller financier personnel",
+  "@coachSubtitle": {
+    "description": "Sous-titre coach"
+  },
+  
+  "coachWelcome": "Posez-moi des questions sur vos finances,\nje suis là pour vous aider !",
+  "@coachWelcome": {
+    "description": "Message de bienvenue coach"
+  },
+  
+  "coachOffline": "Coach hors ligne - historique disponible",
+  "@coachOffline": {
+    "description": "Message coach hors ligne"
+  },
+  
+  "options": "Options",
+  "@options": {
+    "description": "Titre options"
+  },
+  
+  "clearConversation": "Vider la conversation",
+  "@clearConversation": {
+    "description": "Option vider conversation"
+  },
+  
+  "coachLanguage": "Langue du coach",
+  "@coachLanguage": {
+    "description": "Option langue coach"
+  },
+  
+  "french": "Français",
+  "@french": {
+    "description": "Langue française"
+  },
+  
+  "clearConversationConfirm": "Vider la conversation ?",
+  "@clearConversationConfirm": {
+    "description": "Confirmation vider conversation"
+  },
+  
+  "clearConversationWarning": "Cette action est irréversible. L'historique sera supprimé.",
+  "@clearConversationWarning": {
+    "description": "Avertissement vider conversation"
+  },
+  
+  "clear": "Vider",
+  "@clear": {
+    "description": "Bouton vider"
+  },
+  
+  "noGoals": "Aucun objectif",
+  "@noGoals": {
+    "description": "Message aucun objectif"
+  },
+  
+  "createFirstGoal": "Créez votre premier objectif d'épargne",
+  "@createFirstGoal": {
+    "description": "Message créer premier objectif"
+  },
+  
+  "newGoal": "Nouveau",
+  "@newGoal": {
+    "description": "Bouton nouvel objectif"
+  },
+  
+  "achieved": "Atteints",
+  "@achieved": {
+    "description": "Label atteints"
+  },
+  
+  "progress": "Progression",
+  "@progress": {
+    "description": "Label progression"
+  },
+  
+  "reached": "Atteint",
+  "@reached": {
+    "description": "Label atteint"
+  },
+  
+  "daysRemaining_one": "Reste {count} jour",
+  "daysRemaining_other": "Reste {count} jours",
+  
+  "deadlineExceeded": "Deadline dépassée",
+  "@deadlineExceeded": {
+    "description": "Message deadline dépassée"
+  },
+  
+  "budgetLimitReached": "Vous avez atteint {percentage}% de votre limite"
+  
+  "goalBehind": "Objectif en retard",
+  "@goalBehind": {
+    "description": "Message objectif en retard"
+  },
+  
+  "insightsSubtitle": "Analyses et recommandations",
+  "@insightsSubtitle": {
+    "description": "Sous-titre insights"
+  },
+  
+  "readAll": "Tout lire",
+  "@readAll": {
+    "description": "Bouton tout lire"
+  },
+  
+  "noInsights": "Aucun insight pour le moment",
+  "@noInsights": {
+    "description": "Message aucun insight"
+  },
+  
+  "aiAnalyzing": "L'IA analyse vos habitudes financières...",
+  "@aiAnalyzing": {
+    "description": "Message IA en analyse"
+  },
+  
+  "allInsightsRead": "Tous les insights ont été marqués comme lus",
+  "@allInsightsRead": {
+    "description": "Message tous insights lus"
+  },
+  
+  "disputeIncrease": "Contester la hausse",
+  "@disputeIncrease": {
+    "description": "Bouton contester hausse"
+  },
+  
+  "seeAlternatives": "Voir les alternatives",
+  "@seeAlternatives": {
+    "description": "Bouton voir alternatives"
+  },
+  
+  "adjustBudget": "Ajuster mon budget",
+  "@adjustBudget": {
+    "description": "Bouton ajuster budget"
+  },
+  
+  "applyTip": "Appliquer ce conseil",
+  "@applyTip": {
+    "description": "Bouton appliquer conseil"
+  },
+  
+  "user": "Utilisateur",
+  "@user": {
+    "description": "Label utilisateur par défaut"
+  },
+  
+  "emailVerified": "Email vérifié",
+  "@emailVerified": {
+    "description": "Label email vérifié"
+  },
+  
+  "auraPro": "Aura Pro",
+  "@auraPro": {
+    "description": "Nom Aura Pro"
+  },
+  
+  "upgradeToPro": "Passer à Pro",
+  "@upgradeToPro": {
+    "description": "Bouton passer à Pro"
+  },
+  
+  "proActive": "Abonnement actif",
+  "@proActive": {
+    "description": "Message Pro actif"
+  },
+  
+  "unlockAllFeatures": "Débloquez toutes les fonctionnalités",
+  "@unlockAllFeatures": {
+    "description": "Message débloquer fonctionnalités"
+  },
+  
+  "upgrade": "Upgrade",
+  "@upgrade": {
+    "description": "Bouton upgrade"
+  },
+  
+  "privacy": "Confidentialité",
+  "@privacy": {
+    "description": "Label confidentialité"
+  },
+  
+  "helpSupport": "Aide & Support",
+  "@helpSupport": {
+    "description": "Label aide et support"
+  },
+  
+  "logoutConfirm": "Êtes-vous sûr de vouloir vous déconnecter ?",
+  "@logoutConfirm": {
+    "description": "Confirmation déconnexion"
+  },
+  
+  "tools": "Outils",
+  "@tools": {
+    "description": "Section outils"
+  },
+  
+  "bankSync": "Synchronisation bancaire",
+  "@bankSync": {
+    "description": "Option sync bancaire"
+  },
+  
+  "bankSyncDesc": "Connecter vos comptes bancaires",
+  "@bankSyncDesc": {
+    "description": "Description sync bancaire"
+  },
+  
+  "calculator": "Calculateurs",
+  "@calculator": {
+    "description": "Option calculateurs"
+  },
+  
+  "calculatorDesc": "Prêt, intérêts, devises...",
+  "@calculatorDesc": {
+    "description": "Description calculateurs"
+  },
+  
+  "converter": "Convertisseur",
+  "@converter": {
+    "description": "Option convertisseur"
+  },
+  
+  "converterDesc": "Taux de change en temps réel",
+  "@converterDesc": {
+    "description": "Description convertisseur"
+  },
+  
+  "general": "Général",
+  "@general": {
+    "description": "Section général"
+  },
+  
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "Option notifications"
+  },
+  
+  "notificationsDesc": "Gérer les alertes intelligentes",
+  "@notificationsDesc": {
+    "description": "Description notifications"
+  },
+  
+  "privacySettings": "Confidentialité",
+  "@privacySettings": {
+    "description": "Option confidentialité"
+  },
+  
+  "privacyDesc": "Mode discret, Face ID, masquage",
+  "@privacyDesc": {
+    "description": "Description confidentialité"
+  },
+  
+  "language": "Langue",
+  "@language": {
+    "description": "Option langue"
+  },
+  
+  "appearance": "Apparence",
+  "@appearance": {
+    "description": "Section apparence"
+  },
+  
+  "theme": "Thème",
+  "@theme": {
+    "description": "Option thème"
+  },
+  
+  "light": "Clair",
+  "@light": {
+    "description": "Thème clair"
+  },
+  
+  "textSize": "Taille du texte",
+  "@textSize": {
+    "description": "Option taille texte"
+  },
+  
+  "normal": "Normale",
+  "@normal": {
+    "description": "Taille normale"
+  },
+  
+  "data": "Données",
+  "@data": {
+    "description": "Section données"
+  },
+  
+  "backup": "Sauvegarde",
+  "@backup": {
+    "description": "Option sauvegarde"
+  },
+  
+  "lastBackupToday": "Dernière: Aujourd'hui",
+  "@lastBackupToday": {
+    "description": "Dernière sauvegarde"
+  },
+  
+  "exportData": "Exporter les données",
+  "@exportData": {
+    "description": "Option exporter données"
+  },
+  
+  "exportFormats": "CSV, PDF",
+  "@exportFormats": {
+    "description": "Formats d'export"
+  },
+  
+  "deleteData": "Supprimer les données",
+  "@deleteData": {
+    "description": "Option supprimer données"
+  },
+  
+  "deleteDataDesc": "Effacer toutes les transactions",
+  "@deleteDataDesc": {
+    "description": "Description supprimer données"
+  },
+  
+  "about": "À propos",
+  "@about": {
+    "description": "Section à propos"
+  },
+  
+  "version": "Version",
+  "@version": {
+    "description": "Option version"
+  },
+  
+  "termsOfUse": "Conditions d'utilisation",
+  "@termsOfUse": {
+    "description": "Option conditions d'utilisation"
+  },
+  
+  "privacyPolicy": "Politique de confidentialité",
+  "@privacyPolicy": {
+    "description": "Option politique confidentialité"
+  },
+  
+  "warning": "Attention",
+  "@warning": {
+    "description": "Titre avertissement"
+  },
+  
+  "deleteDataConfirm": "Cette action supprimera définitivement toutes vos données. Cette opération est irréversible.",
+  "@deleteDataConfirm": {
+    "description": "Confirmation suppression données"
+  },
+  
+  "expenseAlerts": "Alertes de dépenses",
+  "@expenseAlerts": {
+    "description": "Option alertes dépenses"
+  },
+  
+  "expenseAlertsDesc": "Notifications quand vous dépassez un budget",
+  "@expenseAlertsDesc": {
+    "description": "Description alertes dépenses"
+  },
+  
+  "subscriptionReminders": "Rappels d'abonnements",
+  "@subscriptionReminders": {
+    "description": "Option rappels abonnements"
+  },
+  
+  "subscriptionRemindersDesc": "Avant les prélèvements récurrents",
+  "@subscriptionRemindersDesc": {
+    "description": "Description rappels abonnements"
+  },
+  
+  "vampireDetection": "Détection de vampires",
+  "@vampireDetection": {
+    "description": "Option détection vampires"
+  },
+  
+  "vampireDetectionDesc": "Alertes de hausses de prix",
+  "@vampireDetectionDesc": {
+    "description": "Description détection vampires"
+  },
+  
+  "financialPredictions": "Prédictions financières",
+  "@financialPredictions": {
+    "description": "Option prédictions financières"
+  },
+  
+  "financialPredictionsDesc": "Alertes de risque de découvert",
+  "@financialPredictionsDesc": {
+    "description": "Description prédictions financières"
+  },
+  
+  "weeklySummary": "Résumé hebdomadaire",
+  "@weeklySummary": {
+    "description": "Option résumé hebdomadaire"
+  },
+  
+  "weeklySummaryDesc": "Récapitulatif des dépenses",
+  "@weeklySummaryDesc": {
+    "description": "Description résumé hebdomadaire"
+  },
+  
+  "coachTips": "Conseils du Coach IA",
+  "@coachTips": {
+    "description": "Option conseils coach"
+  },
+  
+  "coachTipsDesc": "Astuces personnalisées",
+  "@coachTipsDesc": {
+    "description": "Description conseils coach"
+  },
+  
+  "level": "Niveau",
+  "@level": {
+    "description": "Label niveau"
+  },
+  
+  "financier": "Financier",
+  "@financier": {
+    "description": "Titre financier"
+  },
+  
+  "xpForNextLevel": "{current} / {next} XP pour niveau {level}",
+  
+  "currentChallenges": "Défis en cours",
+  "@currentChallenges": {
+    "description": "Titre défis en cours"
+  },
+  
+  "newChallenges": "Nouveaux défis",
+  "@newChallenges": {
+    "description": "Titre nouveaux défis"
+  },
+  
+  "completed": "complété",
+  "@completed": {
+    "description": "Label complété"
+  },
+  
+  "daysLeft_one": "{count} jour restant",
+  "daysLeft_other": "{count} jours restants",
+  
+  "difficult": "Difficile",
+  "@difficult": {
+    "description": "Niveau difficile"
+  },
+  
+  "yourStreaks": "Vos séries en cours",
+  "@yourStreaks": {
+    "description": "Titre séries en cours"
+  },
+  
+  "calendar": "Calendrier",
+  "@calendar": {
+    "description": "Titre calendrier"
+  },
+  
+  "days": "jours",
+  "@days": {
+    "description": "Label jours"
+  },
+  
+  "quickTools": "Outils rapides",
+  "@quickTools": {
+    "description": "Titre outils rapides"
+  },
+  
+  "ruleOf72": "Règle des 72",
+  "@ruleOf72": {
+    "description": "Nom règle des 72"
+  },
+  
+  "ruleOf72Desc": "Temps pour doubler un investissement",
+  "@ruleOf72Desc": {
+    "description": "Description règle des 72"
+  },
+  
+  "investmentComparator": "Comparateur d'investissements",
+  "@investmentComparator": {
+    "description": "Nom comparateur investissements"
+  },
+  
+  "investmentComparatorDesc": "Comparez plusieurs scénarios",
+  "@investmentComparatorDesc": {
+    "description": "Description comparateur investissements"
+  },
+  
+  "calculate": "Calculer",
+  "@calculate": {
+    "description": "Bouton calculer"
+  },
+  
+  "yearsToDouble": "années pour doubler",
+  "@yearsToDouble": {
+    "description": "Label années pour doubler"
+  },
+  
+  "timeToDouble": "Temps nécessaire pour doubler un investissement",
+  "@timeToDouble": {
+    "description": "Description temps pour doubler"
+  },
+  
+  "categoryFood": "Alimentation",
+  "categoryTransport": "Transport",
+  "categoryHousing": "Logement",
+  "categoryEntertainment": "Loisirs",
+  "categoryShopping": "Shopping",
+  "categoryHealth": "Santé",
+  "categoryEducation": "Éducation",
+  "categoryUtilities": "Factures",
+  "categorySalary": "Salaire",
+  "categoryOther": "Autre",
+  
+  "filterAll": "Tous",
+  "filterVampire": "Vampires",
+  "filterPrediction": "Prédictions",
+  "filterTip": "Conseils",
+  "filterAchievement": "Succès",
+
+  "details": "Détail",
+  "@details": {
+    "description": "Label détail"
+  },
+
+  "duplicate": "Dupliquer",
+  "@duplicate": {
+    "description": "Action dupliquer"
+  },
+
+  "share": "Partager",
+  "@share": {
+    "description": "Action partager"
+  },
+
+  "back": "Retour",
+  "@back": {
+    "description": "Bouton retour"
+  },
+
+  "sourceScan": "Scan IA",
+  "@sourceScan": {
+    "description": "Label source scan"
+  },
+
+  "sourceVoice": "Reconnaissance vocale",
+  "@sourceVoice": {
+    "description": "Label source vocale"
+  },
+
+  "sourceImport": "Import",
+  "@sourceImport": {
+    "description": "Label source import"
+  },
+
+  "sourceManual": "Manuel",
+  "@sourceManual": {
+    "description": "Label source manuel"
+  },
+
+  "connectedAccounts": "Comptes connectés",
+  "@connectedAccounts": {
+    "description": "Titre comptes connectés"
+  },
+
+  "addBank": "Ajouter une banque",
+  "@addBank": {
+    "description": "Titre ajouter banque"
+  },
+
+  "connectBank": "Connecter une banque",
+  "@connectBank": {
+    "description": "Bouton connecter banque"
+  },
+
+  "secureSync": "Synchronisation automatique sécurisée",
+  "@secureSync": {
+    "description": "Description sync sécurisée"
+  },
+
+  "popularBanks": "Banques populaires",
+  "@popularBanks": {
+    "description": "Label banques populaires"
+  },
+
+  "maxSecurity": "Sécurité maximale",
+  "@maxSecurity": {
+    "description": "Titre sécurité max"
+  },
+
+  "securityFeatures": "• Connexion via Open Banking sécurisé\n• Vos identifiants ne sont jamais stockés\n• Lecture seule, aucun virement possible\n• Certifié DSP2 conforme aux normes européennes",
+  "@securityFeatures": {
+    "description": "Liste fonctionnalités sécurité"
+  },
+
+  "finish": "Terminer",
+  "@finish": {
+    "description": "Bouton terminer"
+  },
+
+  "continueButton": "Continuer",
+  "@continueButton": {
+    "description": "Bouton continuer"
+  },
+
+  "selectLanguage": "Choisir la langue",
+  "@selectLanguage": {
+    "description": "Titre sélection langue"
+  },
+
+  "languageDesc": "Choisissez votre langue préférée",
+  "@languageDesc": {
+    "description": "Description sélection langue"
+  },
+
+  "languageAutoDetect": "La langue est automatiquement détectée selon les paramètres de votre appareil",
+  "@languageAutoDetect": {
+    "description": "Info détection auto langue"
+  },
+
+  "changingLanguage": "Changement de langue...",
+  "@changingLanguage": {
+    "description": "Message changement langue"
+  },
+
+  "languageChanged": "Langue changée avec succès !",
+  "@languageChanged": {
+    "description": "Confirmation changement langue"
+  },
+
+  "felixScanningReceipt": "Lecture du reçu...",
+  "@felixScanningReceipt": {
+    "description": "Message scan étape 1"
+  },
+
+  "felixIdentifyingMerchant": "Identification du marchand...",
+  "@felixIdentifyingMerchant": {
+    "description": "Message scan étape 2"
+  },
+
+  "felixCategorizing": "Catégorisation...",
+  "@felixCategorizing": {
+    "description": "Message scan étape 3"
+  },
+
+  "felixAlmostDone": "Presque...",
+  "@felixAlmostDone": {
+    "description": "Message scan étape 4"
+  },
+
+  "felixAnalyzingFinances": "Analyse de vos finances...",
+  "@felixAnalyzingFinances": {
+    "description": "Message chargement splash"
+  },
+
+  "felixTransactionRecorded": "Transaction enregistrée !",
+  "@felixTransactionRecorded": {
+    "description": "Message succès transaction"
+  },
+
+  "felixDetectedSomething": "Félix a détecté quelque chose ! 🧛",
+  "@felixDetectedSomething": {
+    "description": "Titre alerte vampire"
+  },
+
+  "felixGoalAchieved": "Bravo ! Objectif atteint 🎉",
+  "@felixGoalAchieved": {
+    "description": "Message objectif atteint"
+  },
+
+  "felixWaitingTransactions": "Félix attend vos premières transactions !",
+  "@felixWaitingTransactions": {
+    "description": "Message écran vide transactions"
+  },
+
+  "felixFirstScanHint": "Commencez à scanner vos reçus pour suivre vos dépenses",
+  "@felixFirstScanHint": {
+    "description": "Sous-message écran vide"
+  },
+
+  "felixScanFirstReceipt": "Scanner mon premier reçu",
+  "@felixScanFirstReceipt": {
+    "description": "Bouton scanner premier reçu"
+  },
+
+  "felixJoinPro": "Rejoignez Félix en Pro",
+  "@felixJoinPro": {
+    "description": "Titre paywall"
+  },
+
+  "felixJoinProSubtitle": "Débloquez toutes les fonctionnalités premium et donnez à Félix de nouveaux accessoires !",
+  "@felixJoinProSubtitle": {
+    "description": "Sous-titre paywall"
+  },
+
+  "felixStreakLost": "Oh non... Série perdue 😢",
+  "@felixStreakLost": {
+    "description": "Message streak perdu"
+  },
+
+  "felixStreakLostSubtitle": "Ne lâchez pas, reprenez demain !",
+  "@felixStreakLostSubtitle": {
+    "description": "Sous-message streak perdu"
+  },
+
+  "felixLevelUp": "Niveau supérieur ! 🎊",
+  "@felixLevelUp": {
+    "description": "Message niveau supérieur"
+  },
+
+  "felixFirstScanSuccess": "Premier scan réussi !",
+  "@felixFirstScanSuccess": {
+    "description": "Message premier scan"
+  },
+
+  "felixWelcome": "Bienvenue !",
+  "@felixWelcome": {
+    "description": "Message bienvenue Félix"
+  },
+
+  "felixProFeature": "Fonctionnalité Pro",
+  "@felixProFeature": {
+    "description": "Titre mini paywall"
+  },
+
+  "felixProFeatureDesc": "{feature} est réservé aux membres Pro",
+  "@felixProFeatureDesc": {
+    "description": "Description mini paywall",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
+
+  "felixNoGoalYet": "Pas encore d'objectif ?",
+  "@felixNoGoalYet": {
+    "description": "Titre objectifs vides"
+  },
+
+  "felixNoGoalSubtitle": "Félix vous aidera à atteindre vos projets financiers",
+  "@felixNoGoalSubtitle": {
+    "description": "Sous-titre objectifs vides"
+  },
+
+  "felixCreateGoal": "Créer un objectif",
+  "@felixCreateGoal": {
+    "description": "Bouton créer objectif"
   }
 }

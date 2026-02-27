@@ -2,6 +2,7 @@ import 'dart:math' show pi, sin;
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../../core/extensions/app_localizations_extension.dart';
 import '../../../../core/haptics/haptic_service.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/theme/aura_colors.dart';
@@ -153,7 +154,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                                 children: [
                                   // Titre
                                   Text(
-                                    'Bienvenue',
+                                    context.l10n.welcome,
                                     style: AuraTypography.h1.copyWith(
                                       color: AuraColors.auraTextPrimary,
                                       fontSize: 36,
@@ -164,7 +165,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                                   
                                   // Sous-titre
                                   Text(
-                                    'Votre santé financière, réinventée',
+                                    context.l10n.loginSubtitle,
                                     style: AuraTypography.bodyLarge.copyWith(
                                       color: AuraColors.auraTextPrimary
                                           .withOpacity(0.7),
@@ -286,7 +287,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
             horizontal: AuraDimensions.spaceM,
           ),
           child: Text(
-            'ou',
+            context.l10n.or,
             style: AuraTypography.bodyMedium.copyWith(
               color: AuraColors.auraTextPrimary.withOpacity(0.6),
             ),
@@ -327,7 +328,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
           color: AuraColors.auraTextPrimary,
         ),
         decoration: InputDecoration(
-          hintText: 'Continuer avec email',
+          hintText: context.l10n.continueWithEmail,
           hintStyle: AuraTypography.bodyLarge.copyWith(
             color: AuraColors.auraTextPrimary.withOpacity(0.5),
           ),
@@ -399,7 +400,7 @@ class _AppleSignInButton extends StatelessWidget {
             ),
             const SizedBox(width: 12),
             Text(
-              'Continuer avec Apple',
+              context.l10n.continueWithApple,
               style: AuraTypography.labelLarge.copyWith(
                 color: Colors.white,
                 fontSize: 17,
@@ -453,7 +454,7 @@ class _GoogleSignInButton extends StatelessWidget {
             ),
             const SizedBox(width: 12),
             Text(
-              'Continuer avec Google',
+              context.l10n.continueWithGoogle,
               style: AuraTypography.labelLarge.copyWith(
                 color: const Color(0xFF333333),
                 fontSize: 17,

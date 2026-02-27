@@ -1,53 +1,1309 @@
 {
   "@@locale": "en",
   "appName": "Aura Finance",
+  "@appName": {
+    "description": "Application name"
+  },
+  
   "welcome": "Welcome",
+  "@welcome": {
+    "description": "Welcome message"
+  },
+  
   "login": "Sign In",
+  "@login": {
+    "description": "Sign in button"
+  },
+  
   "register": "Sign Up",
+  "@register": {
+    "description": "Sign up button"
+  },
+  
   "email": "Email",
+  "@email": {
+    "description": "Email label"
+  },
+  
   "password": "Password",
+  "@password": {
+    "description": "Password label"
+  },
+  
   "forgotPassword": "Forgot password?",
+  "@forgotPassword": {
+    "description": "Forgot password link"
+  },
+  
   "fullName": "Full Name",
+  "@fullName": {
+    "description": "Full name label"
+  },
+  
   "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Confirm password label"
+  },
+  
   "dashboard": "Dashboard",
+  "@dashboard": {
+    "description": "Dashboard title"
+  },
+  
   "transactions": "Transactions",
+  "@transactions": {
+    "description": "Transactions title"
+  },
+  
   "addTransaction": "Add Transaction",
+  "@addTransaction": {
+    "description": "Add transaction button"
+  },
+  
   "scan": "Scan",
+  "@scan": {
+    "description": "Scan button"
+  },
+  
   "insights": "Insights",
+  "@insights": {
+    "description": "Insights title"
+  },
+  
   "profile": "Profile",
+  "@profile": {
+    "description": "Profile title"
+  },
+  
   "settings": "Settings",
+  "@settings": {
+    "description": "Settings title"
+  },
+  
   "logout": "Sign Out",
+  "@logout": {
+    "description": "Sign out button"
+  },
+  
   "balance": "Balance",
+  "@balance": {
+    "description": "Balance label"
+  },
+  
+  "totalBalance": "Total Balance",
+  "@totalBalance": {
+    "description": "Total balance label"
+  },
+  
   "income": "Income",
+  "@income": {
+    "description": "Income label"
+  },
+  
   "expenses": "Expenses",
+  "@expenses": {
+    "description": "Expenses label"
+  },
+  
   "subscriptions": "Subscriptions",
+  "@subscriptions": {
+    "description": "Subscriptions label"
+  },
+  
   "vampireDetected": "Vampire detected!",
+  "@vampireDetected": {
+    "description": "Vampire alert"
+  },
+  
   "coach": "Coach",
+  "@coach": {
+    "description": "Coach title"
+  },
+  
   "askCoach": "Ask the coach...",
+  "@askCoach": {
+    "description": "Coach placeholder"
+  },
+  
   "save": "Save",
+  "@save": {
+    "description": "Save button"
+  },
+  
   "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button"
+  },
+  
   "delete": "Delete",
+  "@delete": {
+    "description": "Delete button"
+  },
+  
   "edit": "Edit",
+  "@edit": {
+    "description": "Edit button"
+  },
+  
   "search": "Search",
+  "@search": {
+    "description": "Search label"
+  },
+  
   "filter": "Filter",
+  "@filter": {
+    "description": "Filter button"
+  },
+  
   "sort": "Sort",
+  "@sort": {
+    "description": "Sort button"
+  },
+  
   "category": "Category",
+  "@category": {
+    "description": "Category label"
+  },
+  
   "date": "Date",
+  "@date": {
+    "description": "Date label"
+  },
+  
   "amount": "Amount",
+  "@amount": {
+    "description": "Amount label"
+  },
+  
   "description": "Description",
+  "@description": {
+    "description": "Description label"
+  },
+  
   "merchant": "Merchant",
+  "@merchant": {
+    "description": "Merchant label"
+  },
+  
   "continueWithGoogle": "Continue with Google",
+  "@continueWithGoogle": {
+    "description": "Google button"
+  },
+  
   "continueWithApple": "Continue with Apple",
+  "@continueWithApple": {
+    "description": "Apple button"
+  },
+  
+  "continueWithEmail": "Continue with email",
+  "@continueWithEmail": {
+    "description": "Email placeholder"
+  },
+  
   "or": "or",
+  "@or": {
+    "description": "Separator"
+  },
+  
   "noAccount": "Don't have an account?",
+  "@noAccount": {
+    "description": "No account text"
+  },
+  
   "hasAccount": "Already have an account?",
+  "@hasAccount": {
+    "description": "Has account text"
+  },
+  
   "onboardingTitle1": "Your money, finally visible",
+  "@onboardingTitle1": {
+    "description": "Onboarding title 1"
+  },
+  
   "onboardingDesc1": "Scan your receipts, track expenses automatically with AI.",
+  "@onboardingDesc1": {
+    "description": "Onboarding description 1"
+  },
+  
   "onboardingTitle2": "Predict your future",
+  "@onboardingTitle2": {
+    "description": "Onboarding title 2"
+  },
+  
   "onboardingDesc2": "AI analyzes your habits and predicts your balance for 30 days.",
+  "@onboardingDesc2": {
+    "description": "Onboarding description 2"
+  },
+  
   "onboardingTitle3": "Hunt vampires",
+  "@onboardingTitle3": {
+    "description": "Onboarding title 3"
+  },
+  
   "onboardingDesc3": "Automatic detection of hidden price increases on your subscriptions.",
+  "@onboardingDesc3": {
+    "description": "Onboarding description 3"
+  },
+  
   "getStarted": "Get Started",
+  "@getStarted": {
+    "description": "Get started button"
+  },
+  
   "next": "Next",
-  "skip": "Skip"
+  "@next": {
+    "description": "Next button"
+  },
+  
+  "skip": "Skip",
+  "@skip": {
+    "description": "Skip button"
+  },
+  
+  "quickActions": "Quick Actions",
+  "@quickActions": {
+    "description": "Quick actions title"
+  },
+  
+  "aiCoach": "AI Coach",
+  "@aiCoach": {
+    "description": "AI coach label"
+  },
+  
+  "accounts": "Accounts",
+  "@accounts": {
+    "description": "Accounts label"
+  },
+  
+  "myAccounts": "My Accounts",
+  "@myAccounts": {
+    "description": "My accounts title"
+  },
+  
+  "goals": "Goals",
+  "@goals": {
+    "description": "Goals label"
+  },
+  
+  "shared": "Shared",
+  "@shared": {
+    "description": "Shared label"
+  },
+  
+  "sharedAccounts": "Shared Accounts",
+  "@sharedAccounts": {
+    "description": "Shared accounts title"
+  },
+  
+  "sharedAccountsDesc": "Manage your finances as a couple, family, or roommates",
+  "@sharedAccountsDesc": {
+    "description": "Shared accounts description"
+  },
+  
+  "viewAll": "View All",
+  "@viewAll": {
+    "description": "View all button"
+  },
+  
+  "challenges": "Challenges",
+  "@challenges": {
+    "description": "Challenges label"
+  },
+  
+  "reports": "Reports",
+  "@reports": {
+    "description": "Reports label"
+  },
+  
+  "banking": "Banking",
+  "@banking": {
+    "description": "Banking label"
+  },
+  
+  "myBanks": "My Banks",
+  "@myBanks": {
+    "description": "My banks title"
+  },
+  
+  "referral": "Referral",
+  "@referral": {
+    "description": "Referral label"
+  },
+  
+  "travel": "Travel",
+  "@travel": {
+    "description": "Travel label"
+  },
+  
+  "reconciliation": "Reconcil.",
+  "@reconciliation": {
+    "description": "Reconciliation label"
+  },
+  
+  "calculators": "Calc.",
+  "@calculators": {
+    "description": "Calculators label"
+  },
+  
+  "calculatorTitle": "Calculators",
+  "@calculatorTitle": {
+    "description": "Calculators title"
+  },
+  
+  "calculatorSubtitle": "Simulate your financial projects",
+  "@calculatorSubtitle": {
+    "description": "Calculators subtitle"
+  },
+  
+  "wealth": "Wealth",
+  "@wealth": {
+    "description": "Wealth label"
+  },
+  
+  "investment": "Invest.",
+  "@investment": {
+    "description": "Investment label"
+  },
+  
+  "retirement": "Retirement",
+  "@retirement": {
+    "description": "Retirement label"
+  },
+  
+  "more": "More",
+  "@more": {
+    "description": "More label"
+  },
+  
+  "aiInsights": "AI Insights",
+  "@aiInsights": {
+    "description": "AI insights title"
+  },
+  
+  "recentTransactions": "Recent Transactions",
+  "@recentTransactions": {
+    "description": "Recent transactions title"
+  },
+  
+  "totalBalanceLabel": "TOTAL BALANCE",
+  "@totalBalanceLabel": {
+    "description": "Total balance label uppercase"
+  },
+  
+  "thisMonth": "this month",
+  "@thisMonth": {
+    "description": "This month label"
+  },
+  
+  "errorOccurred": "Oops! An error occurred",
+  "@errorOccurred": {
+    "description": "Error message"
+  },
+  
+  "retry": "Retry",
+  "@retry": {
+    "description": "Retry button"
+  },
+  
+  "noTransactions": "No transactions",
+  "@noTransactions": {
+    "description": "No transactions message"
+  },
+  
+  "addFirstTransaction": "Start by adding your first transaction",
+  "@addFirstTransaction": {
+    "description": "Add first transaction message"
+  },
+  
+  "add": "Add",
+  "@add": {
+    "description": "Add button"
+  },
+  
+  "newTransaction": "New Transaction",
+  "@newTransaction": {
+    "description": "New transaction title"
+  },
+  
+  "expense": "Expense",
+  "@expense": {
+    "description": "Expense label"
+  },
+  
+  "revenue": "Revenue",
+  "@revenue": {
+    "description": "Revenue label"
+  },
+  
+  "merchantHint": "Merchant name",
+  "@merchantHint": {
+    "description": "Merchant hint"
+  },
+  
+  "descriptionHint": "Transaction details",
+  "@descriptionHint": {
+    "description": "Description hint"
+  },
+  
+  "deleteTransaction": "Delete transaction?",
+  "@deleteTransaction": {
+    "description": "Delete transaction confirmation title"
+  },
+  
+  "deleteTransactionConfirm": "This action cannot be undone.",
+  "@deleteTransactionConfirm": {
+    "description": "Delete transaction confirmation"
+  },
+  
+  "searchTransaction": "Search for a transaction...",
+  "@searchTransaction": {
+    "description": "Search transaction placeholder"
+  },
+  
+  "noResults": "No results",
+  "@noResults": {
+    "description": "No results message"
+  },
+  
+  "searchError": "Search error",
+  "@searchError": {
+    "description": "Search error message"
+  },
+  
+  "loadingError": "Loading error",
+  "@loadingError": {
+    "description": "Loading error message"
+  },
+  
+  "analysisInProgress": "Analysis in progress...",
+  "@analysisInProgress": {
+    "description": "Analysis in progress message"
+  },
+  
+  "unknownError": "An error occurred",
+  "@unknownError": {
+    "description": "Unknown error message"
+  },
+  
+  "transactionAdded": "Transaction added successfully!",
+  "@transactionAdded": {
+    "description": "Transaction added message"
+  },
+  
+  "noAccountFound": "No account",
+  "@noAccountFound": {
+    "description": "No account message"
+  },
+  
+  "addFirstAccount": "Add your first bank account",
+  "@addFirstAccount": {
+    "description": "Add first account message"
+  },
+  
+  "primary": "Primary",
+  "@primary": {
+    "description": "Primary account label"
+  },
+  
+  "noSubscription": "No subscription",
+  "@noSubscription": {
+    "description": "No subscription message"
+  },
+  
+  "addSubscriptionHint": "Add your subscriptions to track price increases",
+  "@addSubscriptionHint": {
+    "description": "Add subscription hint message"
+  },
+  
+  "theGuardian": "The Guardian",
+  "@theGuardian": {
+    "description": "The Guardian name"
+  },
+  
+  "theGuardianDesc": "The Guardian monitors your subscriptions and automatically detects hidden price increases. You receive an alert as soon as a service raises its prices.",
+  "@theGuardianDesc": {
+    "description": "The Guardian description"
+  },
+  
+  "understood": "Got it",
+  "@understood": {
+    "description": "Got it button"
+  },
+  
+  "vampiresDetected_one": "{count} vampire detected",
+  "vampiresDetected_other": "{count} vampires detected",
+  
+  "perMonth": "/month",
+  "@perMonth": {
+    "description": "Per month label"
+  },
+  
+  "perYear": "/year",
+  "@perYear": {
+    "description": "Per year label"
+  },
+  
+  "increases": "Increases",
+  "@increases": {
+    "description": "Increases label"
+  },
+  
+  "nextBilling": "Next billing",
+  "@nextBilling": {
+    "description": "Next billing label"
+  },
+  
+  "increaseDetected": "Increase of {percentage}% detected (+{amount}€)"
+  
+  "loginSubtitle": "Your financial health, reinvented",
+  "@loginSubtitle": {
+    "description": "Login subtitle"
+  },
+  
+  "coachTitle": "Coach Aura",
+  "@coachTitle": {
+    "description": "Coach title"
+  },
+  
+  "coachSubtitle": "Your personal financial advisor",
+  "@coachSubtitle": {
+    "description": "Coach subtitle"
+  },
+  
+  "coachWelcome": "Ask me questions about your finances,\nI'm here to help!",
+  "@coachWelcome": {
+    "description": "Coach welcome message"
+  },
+  
+  "coachOffline": "Coach offline - history available",
+  "@coachOffline": {
+    "description": "Coach offline message"
+  },
+  
+  "options": "Options",
+  "@options": {
+    "description": "Options title"
+  },
+  
+  "clearConversation": "Clear conversation",
+  "@clearConversation": {
+    "description": "Clear conversation option"
+  },
+  
+  "coachLanguage": "Coach language",
+  "@coachLanguage": {
+    "description": "Coach language option"
+  },
+  
+  "french": "French",
+  "@french": {
+    "description": "French language"
+  },
+  
+  "clearConversationConfirm": "Clear conversation?",
+  "@clearConversationConfirm": {
+    "description": "Clear conversation confirmation"
+  },
+  
+  "clearConversationWarning": "This action is irreversible. History will be deleted.",
+  "@clearConversationWarning": {
+    "description": "Clear conversation warning"
+  },
+  
+  "clear": "Clear",
+  "@clear": {
+    "description": "Clear button"
+  },
+  
+  "noGoals": "No goals",
+  "@noGoals": {
+    "description": "No goals message"
+  },
+  
+  "createFirstGoal": "Create your first savings goal",
+  "@createFirstGoal": {
+    "description": "Create first goal message"
+  },
+  
+  "newGoal": "New",
+  "@newGoal": {
+    "description": "New goal button"
+  },
+  
+  "achieved": "Achieved",
+  "@achieved": {
+    "description": "Achieved label"
+  },
+  
+  "progress": "Progress",
+  "@progress": {
+    "description": "Progress label"
+  },
+  
+  "reached": "Reached",
+  "@reached": {
+    "description": "Reached label"
+  },
+  
+  "daysRemaining_one": "{count} day remaining",
+  "daysRemaining_other": "{count} days remaining",
+  
+  "deadlineExceeded": "Deadline exceeded",
+  "@deadlineExceeded": {
+    "description": "Deadline exceeded message"
+  },
+  
+  "budgetLimitReached": "You have reached {percentage}% of your limit"
+  
+  "goalBehind": "Goal behind schedule",
+  "@goalBehind": {
+    "description": "Goal behind message"
+  },
+  
+  "insightsSubtitle": "Analysis and recommendations",
+  "@insightsSubtitle": {
+    "description": "Insights subtitle"
+  },
+  
+  "readAll": "Read All",
+  "@readAll": {
+    "description": "Read all button"
+  },
+  
+  "noInsights": "No insights at the moment",
+  "@noInsights": {
+    "description": "No insights message"
+  },
+  
+  "aiAnalyzing": "AI is analyzing your financial habits...",
+  "@aiAnalyzing": {
+    "description": "AI analyzing message"
+  },
+  
+  "allInsightsRead": "All insights have been marked as read",
+  "@allInsightsRead": {
+    "description": "All insights read message"
+  },
+  
+  "disputeIncrease": "Dispute increase",
+  "@disputeIncrease": {
+    "description": "Dispute increase button"
+  },
+  
+  "seeAlternatives": "See alternatives",
+  "@seeAlternatives": {
+    "description": "See alternatives button"
+  },
+  
+  "adjustBudget": "Adjust my budget",
+  "@adjustBudget": {
+    "description": "Adjust budget button"
+  },
+  
+  "applyTip": "Apply this tip",
+  "@applyTip": {
+    "description": "Apply tip button"
+  },
+  
+  "user": "User",
+  "@user": {
+    "description": "Default user label"
+  },
+  
+  "emailVerified": "Email verified",
+  "@emailVerified": {
+    "description": "Email verified label"
+  },
+  
+  "auraPro": "Aura Pro",
+  "@auraPro": {
+    "description": "Aura Pro name"
+  },
+  
+  "upgradeToPro": "Upgrade to Pro",
+  "@upgradeToPro": {
+    "description": "Upgrade to Pro button"
+  },
+  
+  "proActive": "Subscription active",
+  "@proActive": {
+    "description": "Pro active message"
+  },
+  
+  "unlockAllFeatures": "Unlock all features",
+  "@unlockAllFeatures": {
+    "description": "Unlock features message"
+  },
+  
+  "upgrade": "Upgrade",
+  "@upgrade": {
+    "description": "Upgrade button"
+  },
+  
+  "privacy": "Privacy",
+  "@privacy": {
+    "description": "Privacy label"
+  },
+  
+  "helpSupport": "Help & Support",
+  "@helpSupport": {
+    "description": "Help and support label"
+  },
+  
+  "logoutConfirm": "Are you sure you want to sign out?",
+  "@logoutConfirm": {
+    "description": "Logout confirmation"
+  },
+  
+  "tools": "Tools",
+  "@tools": {
+    "description": "Tools section"
+  },
+  
+  "bankSync": "Bank Synchronization",
+  "@bankSync": {
+    "description": "Bank sync option"
+  },
+  
+  "bankSyncDesc": "Connect your bank accounts",
+  "@bankSyncDesc": {
+    "description": "Bank sync description"
+  },
+  
+  "calculator": "Calculators",
+  "@calculator": {
+    "description": "Calculators option"
+  },
+  
+  "calculatorDesc": "Loan, interest, currency...",
+  "@calculatorDesc": {
+    "description": "Calculators description"
+  },
+  
+  "converter": "Converter",
+  "@converter": {
+    "description": "Converter option"
+  },
+  
+  "converterDesc": "Real-time exchange rates",
+  "@converterDesc": {
+    "description": "Converter description"
+  },
+  
+  "general": "General",
+  "@general": {
+    "description": "General section"
+  },
+  
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "Notifications option"
+  },
+  
+  "notificationsDesc": "Manage smart alerts",
+  "@notificationsDesc": {
+    "description": "Notifications description"
+  },
+  
+  "privacySettings": "Privacy",
+  "@privacySettings": {
+    "description": "Privacy option"
+  },
+  
+  "privacyDesc": "Stealth mode, Face ID, masking",
+  "@privacyDesc": {
+    "description": "Privacy description"
+  },
+  
+  "language": "Language",
+  "@language": {
+    "description": "Language option"
+  },
+  
+  "appearance": "Appearance",
+  "@appearance": {
+    "description": "Appearance section"
+  },
+  
+  "theme": "Theme",
+  "@theme": {
+    "description": "Theme option"
+  },
+  
+  "light": "Light",
+  "@light": {
+    "description": "Light theme"
+  },
+  
+  "textSize": "Text size",
+  "@textSize": {
+    "description": "Text size option"
+  },
+  
+  "normal": "Normal",
+  "@normal": {
+    "description": "Normal size"
+  },
+  
+  "data": "Data",
+  "@data": {
+    "description": "Data section"
+  },
+  
+  "backup": "Backup",
+  "@backup": {
+    "description": "Backup option"
+  },
+  
+  "lastBackupToday": "Last: Today",
+  "@lastBackupToday": {
+    "description": "Last backup"
+  },
+  
+  "exportData": "Export data",
+  "@exportData": {
+    "description": "Export data option"
+  },
+  
+  "exportFormats": "CSV, PDF",
+  "@exportFormats": {
+    "description": "Export formats"
+  },
+  
+  "deleteData": "Delete data",
+  "@deleteData": {
+    "description": "Delete data option"
+  },
+  
+  "deleteDataDesc": "Clear all transactions",
+  "@deleteDataDesc": {
+    "description": "Delete data description"
+  },
+  
+  "about": "About",
+  "@about": {
+    "description": "About section"
+  },
+  
+  "version": "Version",
+  "@version": {
+    "description": "Version option"
+  },
+  
+  "termsOfUse": "Terms of Use",
+  "@termsOfUse": {
+    "description": "Terms of use option"
+  },
+  
+  "privacyPolicy": "Privacy Policy",
+  "@privacyPolicy": {
+    "description": "Privacy policy option"
+  },
+  
+  "warning": "Warning",
+  "@warning": {
+    "description": "Warning title"
+  },
+  
+  "deleteDataConfirm": "This action will permanently delete all your data. This operation is irreversible.",
+  "@deleteDataConfirm": {
+    "description": "Delete data confirmation"
+  },
+  
+  "expenseAlerts": "Expense alerts",
+  "@expenseAlerts": {
+    "description": "Expense alerts option"
+  },
+  
+  "expenseAlertsDesc": "Notifications when you exceed a budget",
+  "@expenseAlertsDesc": {
+    "description": "Expense alerts description"
+  },
+  
+  "subscriptionReminders": "Subscription reminders",
+  "@subscriptionReminders": {
+    "description": "Subscription reminders option"
+  },
+  
+  "subscriptionRemindersDesc": "Before recurring payments",
+  "@subscriptionRemindersDesc": {
+    "description": "Subscription reminders description"
+  },
+  
+  "vampireDetection": "Vampire detection",
+  "@vampireDetection": {
+    "description": "Vampire detection option"
+  },
+  
+  "vampireDetectionDesc": "Price increase alerts",
+  "@vampireDetectionDesc": {
+    "description": "Vampire detection description"
+  },
+  
+  "financialPredictions": "Financial predictions",
+  "@financialPredictions": {
+    "description": "Financial predictions option"
+  },
+  
+  "financialPredictionsDesc": "Overdraft risk alerts",
+  "@financialPredictionsDesc": {
+    "description": "Financial predictions description"
+  },
+  
+  "weeklySummary": "Weekly summary",
+  "@weeklySummary": {
+    "description": "Weekly summary option"
+  },
+  
+  "weeklySummaryDesc": "Expense recap",
+  "@weeklySummaryDesc": {
+    "description": "Weekly summary description"
+  },
+  
+  "coachTips": "AI Coach tips",
+  "@coachTips": {
+    "description": "Coach tips option"
+  },
+  
+  "coachTipsDesc": "Personalized tips",
+  "@coachTipsDesc": {
+    "description": "Coach tips description"
+  },
+  
+  "level": "Level",
+  "@level": {
+    "description": "Level label"
+  },
+  
+  "financier": "Financier",
+  "@financier": {
+    "description": "Financier title"
+  },
+  
+  "xpForNextLevel": "{current} / {next} XP for level {level}",
+  
+  "currentChallenges": "Current challenges",
+  "@currentChallenges": {
+    "description": "Current challenges title"
+  },
+  
+  "newChallenges": "New challenges",
+  "@newChallenges": {
+    "description": "New challenges title"
+  },
+  
+  "completed": "completed",
+  "@completed": {
+    "description": "Completed label"
+  },
+  
+  "daysLeft_one": "{count} day left",
+  "daysLeft_other": "{count} days left",
+  
+  "difficult": "Difficult",
+  "@difficult": {
+    "description": "Difficult level"
+  },
+  
+  "yourStreaks": "Your current streaks",
+  "@yourStreaks": {
+    "description": "Your streaks title"
+  },
+  
+  "calendar": "Calendar",
+  "@calendar": {
+    "description": "Calendar title"
+  },
+  
+  "days": "days",
+  "@days": {
+    "description": "Days label"
+  },
+  
+  "quickTools": "Quick tools",
+  "@quickTools": {
+    "description": "Quick tools title"
+  },
+  
+  "ruleOf72": "Rule of 72",
+  "@ruleOf72": {
+    "description": "Rule of 72 name"
+  },
+  
+  "ruleOf72Desc": "Time to double an investment",
+  "@ruleOf72Desc": {
+    "description": "Rule of 72 description"
+  },
+  
+  "investmentComparator": "Investment comparator",
+  "@investmentComparator": {
+    "description": "Investment comparator name"
+  },
+  
+  "investmentComparatorDesc": "Compare multiple scenarios",
+  "@investmentComparatorDesc": {
+    "description": "Investment comparator description"
+  },
+  
+  "calculate": "Calculate",
+  "@calculate": {
+    "description": "Calculate button"
+  },
+  
+  "yearsToDouble": "years to double",
+  "@yearsToDouble": {
+    "description": "Years to double label"
+  },
+  
+  "timeToDouble": "Time required to double an investment",
+  "@timeToDouble": {
+    "description": "Time to double description"
+  },
+  
+  "categoryFood": "Food",
+  "categoryTransport": "Transport",
+  "categoryHousing": "Housing",
+  "categoryEntertainment": "Entertainment",
+  "categoryShopping": "Shopping",
+  "categoryHealth": "Health",
+  "categoryEducation": "Education",
+  "categoryUtilities": "Utilities",
+  "categorySalary": "Salary",
+  "categoryOther": "Other",
+  
+  "filterAll": "All",
+  "filterVampire": "Vampires",
+  "filterPrediction": "Predictions",
+  "filterTip": "Tips",
+  "filterAchievement": "Achievements",
+
+  "details": "Details",
+  "@details": {
+    "description": "Details label"
+  },
+
+  "duplicate": "Duplicate",
+  "@duplicate": {
+    "description": "Duplicate action"
+  },
+
+  "share": "Share",
+  "@share": {
+    "description": "Share action"
+  },
+
+  "back": "Back",
+  "@back": {
+    "description": "Back button"
+  },
+
+  "sourceScan": "AI Scan",
+  "@sourceScan": {
+    "description": "Source scan label"
+  },
+
+  "sourceVoice": "Voice Recognition",
+  "@sourceVoice": {
+    "description": "Source voice label"
+  },
+
+  "sourceImport": "Import",
+  "@sourceImport": {
+    "description": "Source import label"
+  },
+
+  "sourceManual": "Manual",
+  "@sourceManual": {
+    "description": "Source manual label"
+  },
+
+  "connectedAccounts": "Connected Accounts",
+  "@connectedAccounts": {
+    "description": "Connected accounts title"
+  },
+
+  "addBank": "Add a Bank",
+  "@addBank": {
+    "description": "Add bank title"
+  },
+
+  "connectBank": "Connect a Bank",
+  "@connectBank": {
+    "description": "Connect bank button"
+  },
+
+  "secureSync": "Secure automatic synchronization",
+  "@secureSync": {
+    "description": "Secure sync description"
+  },
+
+  "popularBanks": "Popular Banks",
+  "@popularBanks": {
+    "description": "Popular banks label"
+  },
+
+  "maxSecurity": "Maximum Security",
+  "@maxSecurity": {
+    "description": "Max security title"
+  },
+
+  "securityFeatures": "• Secure Open Banking connection\n• Your credentials are never stored\n• Read-only, no transfers possible\n• DSP2 certified compliant with European standards",
+  "@securityFeatures": {
+    "description": "Security features list"
+  },
+
+  "finish": "Finish",
+  "@finish": {
+    "description": "Finish button"
+  },
+
+  "continueButton": "Continue",
+  "@continueButton": {
+    "description": "Continue button"
+  },
+
+  "selectLanguage": "Select Language",
+  "@selectLanguage": {
+    "description": "Select language title"
+  },
+
+  "languageDesc": "Choose your preferred language",
+  "@languageDesc": {
+    "description": "Language selection description"
+  },
+
+  "languageAutoDetect": "The language is automatically detected based on your device settings",
+  "@languageAutoDetect": {
+    "description": "Auto detect language info"
+  },
+
+  "changingLanguage": "Changing language...",
+  "@changingLanguage": {
+    "description": "Changing language message"
+  },
+
+  "languageChanged": "Language changed successfully!",
+  "@languageChanged": {
+    "description": "Language changed confirmation"
+  },
+
+  "felixScanningReceipt": "Reading receipt...",
+  "@felixScanningReceipt": {
+    "description": "Scan step 1 message"
+  },
+
+  "felixIdentifyingMerchant": "Identifying merchant...",
+  "@felixIdentifyingMerchant": {
+    "description": "Scan step 2 message"
+  },
+
+  "felixCategorizing": "Categorizing...",
+  "@felixCategorizing": {
+    "description": "Scan step 3 message"
+  },
+
+  "felixAlmostDone": "Almost done...",
+  "@felixAlmostDone": {
+    "description": "Scan step 4 message"
+  },
+
+  "felixAnalyzingFinances": "Analyzing your finances...",
+  "@felixAnalyzingFinances": {
+    "description": "Splash loading message"
+  },
+
+  "felixTransactionRecorded": "Transaction recorded!",
+  "@felixTransactionRecorded": {
+    "description": "Transaction success message"
+  },
+
+  "felixDetectedSomething": "Félix detected something! 🧛",
+  "@felixDetectedSomething": {
+    "description": "Vampire alert title"
+  },
+
+  "felixGoalAchieved": "Congratulations! Goal achieved 🎉",
+  "@felixGoalAchieved": {
+    "description": "Goal achieved message"
+  },
+
+  "felixWaitingTransactions": "Félix is waiting for your first transactions!",
+  "@felixWaitingTransactions": {
+    "description": "Empty transactions message"
+  },
+
+  "felixFirstScanHint": "Start scanning your receipts to track your expenses",
+  "@felixFirstScanHint": {
+    "description": "Empty state subtitle"
+  },
+
+  "felixScanFirstReceipt": "Scan my first receipt",
+  "@felixScanFirstReceipt": {
+    "description": "Scan first receipt button"
+  },
+
+  "felixJoinPro": "Join Félix in Pro",
+  "@felixJoinPro": {
+    "description": "Paywall title"
+  },
+
+  "felixJoinProSubtitle": "Unlock all premium features and give Félix new accessories!",
+  "@felixJoinProSubtitle": {
+    "description": "Paywall subtitle"
+  },
+
+  "felixStreakLost": "Oh no... Streak lost 😢",
+  "@felixStreakLost": {
+    "description": "Streak lost message"
+  },
+
+  "felixStreakLostSubtitle": "Don't give up, start again tomorrow!",
+  "@felixStreakLostSubtitle": {
+    "description": "Streak lost subtitle"
+  },
+
+  "felixLevelUp": "Level up! 🎊",
+  "@felixLevelUp": {
+    "description": "Level up message"
+  },
+
+  "felixFirstScanSuccess": "First scan successful!",
+  "@felixFirstScanSuccess": {
+    "description": "First scan message"
+  },
+
+  "felixWelcome": "Welcome!",
+  "@felixWelcome": {
+    "description": "Félix welcome message"
+  },
+
+  "felixProFeature": "Pro Feature",
+  "@felixProFeature": {
+    "description": "Mini paywall title"
+  },
+
+  "felixProFeatureDesc": "{feature} is reserved for Pro members",
+  "@felixProFeatureDesc": {
+    "description": "Mini paywall description",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
+
+  "felixNoGoalYet": "No goal yet?",
+  "@felixNoGoalYet": {
+    "description": "Empty goals title"
+  },
+
+  "felixNoGoalSubtitle": "Félix will help you achieve your financial goals",
+  "@felixNoGoalSubtitle": {
+    "description": "Empty goals subtitle"
+  },
+
+  "felixCreateGoal": "Create a goal",
+  "@felixCreateGoal": {
+    "description": "Create goal button"
+  }
 }

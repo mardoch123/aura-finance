@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'core/ads/ads_initializer.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/aura_theme.dart';
+import 'core/services/locale_service.dart';
 import 'features/subscription/subscription_provider.dart';
 import 'services/supabase_service.dart';
 import 'services/notification_service.dart';
@@ -38,6 +40,9 @@ void main() async {
   // 3. Notifications
   await NotificationService.instance.initialize();
   
+  // 4. Service de locale (langue)
+  await LocaleService.instance.initialize();
+  
   runApp(
     const ProviderScope(
       child: AuraApp(),
@@ -46,36 +51,75 @@ void main() async {
 }
 
 /// Application principale Aura Finance
-class AuraApp extends ConsumerWidget {
+class AuraApp extends ConsumerStatefulWidget {
   const AuraApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<AuraApp> createState() => _AuraAppState();
+}
+
+class _AuraAppState extends ConsumerState<AuraApp> {
+  late Future<void> _initializationFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _initializationFuture = _initializeLocale();
+  }
+
+  Future<void> _initializeLocale() async {
+    // Initialiser le service de locale
+    await LocaleService.instance.initialize();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final router = ref.watch(routerProvider);
     
-    return MaterialApp.router(
-      title: 'Aura Finance',
-      debugShowCheckedModeBanner: false,
-      
-      // Thème
-      theme: AuraTheme.lightTheme,
-      darkTheme: AuraTheme.darkTheme,
-      themeMode: ThemeMode.light,
-      
-      // Router
-      routerConfig: router,
-      
-      // Localisation
-      localizationsDelegates: const [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('fr', 'FR'),
-        Locale('en', 'US'),
-      ],
-      locale: const Locale('fr', 'FR'),
+    return FutureBuilder(
+      future: _initializationFuture,
+      builder: (context, snapshot) {
+        // Pendant l'initialisation, afficher un écran de chargement
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: Container(
+              color: AuraColors.auraBackground,
+              child: const Center(
+                child: CircularProgressIndicator(
+                  color: AuraColors.auraAmber,
+                ),
+              ),
+            ),
+          );
+        }
+
+        // Une fois initialisé, construire l'app avec la locale
+        final currentLocale = LocaleService.instance.currentLocale;
+        
+        return MaterialApp.router(
+          title: 'Aura Finance',
+          debugShowCheckedModeBanner: false,
+          
+          // Thème
+          theme: AuraTheme.lightTheme,
+          darkTheme: AuraTheme.darkTheme,
+          themeMode: ThemeMode.light,
+          
+          // Router
+          routerConfig: router,
+          
+          // Localisation - utilise la locale détectée ou sauvegardée
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: LocaleService.supportedLocales,
+          locale: currentLocale,
+        );
+      },
     );
   }
 }

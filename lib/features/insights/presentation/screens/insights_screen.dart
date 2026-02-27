@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
+import '../../../../core/extensions/app_localizations_extension.dart';
 import '../../../../core/haptics/haptic_service.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/theme/aura_colors.dart';
@@ -59,11 +60,11 @@ class _InsightsScreenState extends ConsumerState<InsightsScreen> {
             child: Column(
               children: [
                 Text(
-                  'Insights IA',
+                  context.l10n.aiInsights,
                   style: AuraTypography.h3.copyWith(color: AuraColors.auraTextDark),
                 ),
                 Text(
-                  'Analyses et recommandations',
+                  context.l10n.insightsSubtitle,
                   style: AuraTypography.bodySmall.copyWith(
                     color: AuraColors.auraTextDarkSecondary,
                   ),
@@ -77,7 +78,7 @@ class _InsightsScreenState extends ConsumerState<InsightsScreen> {
               _markAllAsRead();
             },
             child: Text(
-              'Tout lire',
+              context.l10n.readAll,
               style: AuraTypography.labelMedium.copyWith(
                 color: AuraColors.auraAmber,
               ),
@@ -178,12 +179,12 @@ class _InsightsScreenState extends ConsumerState<InsightsScreen> {
           ),
           const SizedBox(height: AuraDimensions.spaceL),
           Text(
-            'Aucun insight pour le moment',
+            context.l10n.noInsights,
             style: AuraTypography.h4.copyWith(color: AuraColors.auraTextDark),
           ),
           const SizedBox(height: AuraDimensions.spaceS),
           Text(
-            'L\'IA analyse vos habitudes financières...',
+            context.l10n.aiAnalyzing,
             style: AuraTypography.bodyMedium.copyWith(
               color: AuraColors.auraTextDarkSecondary,
             ),
@@ -198,7 +199,7 @@ class _InsightsScreenState extends ConsumerState<InsightsScreen> {
     HapticService.success();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: const Text('Tous les insights ont été marqués comme lus'),
+        content: Text(context.l10n.allInsightsRead),
         backgroundColor: AuraColors.auraGreen,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
@@ -487,7 +488,7 @@ class InsightDetailSheet extends StatelessWidget {
                 // TODO: Contester la hausse
               },
               icon: const Icon(Icons.warning_amber),
-              label: const Text('Contester la hausse'),
+              label: Text(context.l10n.disputeIncrease),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AuraColors.auraRed,
                 minimumSize: const Size(double.infinity, 48),
@@ -498,7 +499,7 @@ class InsightDetailSheet extends StatelessWidget {
               onPressed: () {
                 // TODO: Voir alternatives
               },
-              child: const Text('Voir les alternatives'),
+              child: Text(context.l10n.seeAlternatives),
             ),
           ],
         );
@@ -508,7 +509,7 @@ class InsightDetailSheet extends StatelessWidget {
             context.goToBudgets();
           },
           icon: const Icon(Icons.savings),
-          label: const Text('Ajuster mon budget'),
+          label: Text(context.l10n.adjustBudget),
           style: ElevatedButton.styleFrom(
             minimumSize: const Size(double.infinity, 48),
           ),
@@ -519,7 +520,7 @@ class InsightDetailSheet extends StatelessWidget {
             // TODO: Appliquer le conseil
           },
           icon: const Icon(Icons.check),
-          label: const Text('Appliquer ce conseil'),
+          label: Text(context.l10n.applyTip),
           style: ElevatedButton.styleFrom(
             minimumSize: const Size(double.infinity, 48),
           ),

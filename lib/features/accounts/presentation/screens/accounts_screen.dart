@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
+import '../../../../core/extensions/app_localizations_extension.dart';
 import '../../../../core/haptics/haptic_service.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/theme/aura_colors.dart';
@@ -64,7 +65,7 @@ class _AccountsScreenState extends ConsumerState<AccountsScreen> {
           ),
           Expanded(
             child: Text(
-              'Mes comptes',
+              context.l10n.myAccounts,
               style: AuraTypography.h3.copyWith(color: AuraColors.auraTextDark),
               textAlign: TextAlign.center,
             ),
@@ -88,7 +89,7 @@ class _AccountsScreenState extends ConsumerState<AccountsScreen> {
       child: Column(
         children: [
           Text(
-            'Solde total',
+            context.l10n.totalBalance,
             style: AuraTypography.labelMedium.copyWith(
               color: AuraColors.auraTextDarkSecondary,
             ),
@@ -146,12 +147,12 @@ class _AccountsScreenState extends ConsumerState<AccountsScreen> {
           ),
           const SizedBox(height: AuraDimensions.spaceL),
           Text(
-            'Aucun compte',
+            context.l10n.noAccountFound,
             style: AuraTypography.h4.copyWith(color: AuraColors.auraTextDark),
           ),
           const SizedBox(height: AuraDimensions.spaceS),
           Text(
-            'Ajoutez votre premier compte bancaire',
+            context.l10n.addFirstAccount,
             style: AuraTypography.bodyMedium.copyWith(
               color: AuraColors.auraTextDarkSecondary,
             ),
@@ -170,7 +171,7 @@ class _AccountsScreenState extends ConsumerState<AccountsScreen> {
       backgroundColor: AuraColors.auraAmber,
       icon: const Icon(Icons.add, color: Colors.white),
       label: Text(
-        'Ajouter',
+        context.l10n.add,
         style: AuraTypography.labelMedium.copyWith(color: Colors.white),
       ),
     );
@@ -295,7 +296,7 @@ class AccountCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: Text(
-                          'Principal',
+                          context.l10n.primary,
                           style: AuraTypography.caption.copyWith(
                             color: AuraColors.auraAmber,
                           ),

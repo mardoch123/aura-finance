@@ -9,6 +9,7 @@ import '../../../../core/theme/aura_dimensions.dart';
 import '../../../../core/theme/aura_typography.dart';
 import '../../../../core/widgets/aura_button.dart';
 import '../../../../core/widgets/glass_card.dart';
+import '../../../../core/extensions/app_localizations_extension.dart';
 import '../../domain/transaction_model.dart';
 import '../providers/transactions_provider.dart';
 
@@ -30,7 +31,7 @@ class TransactionDetailScreen extends ConsumerWidget {
       body: transactionAsync.when(
         data: (transaction) {
           if (transaction == null) {
-            return _buildErrorState(context, 'Transaction non trouvée');
+            return _buildErrorState(context, context.l10n.noResults);
           }
           return _buildContent(context, ref, transaction);
         },
@@ -108,20 +109,20 @@ class TransactionDetailScreen extends ConsumerWidget {
                       children: [
                         _buildDetailRow(
                           icon: Icons.category,
-                          label: 'Catégorie',
+                          label: context.l10n.category,
                           value: _capitalize(transaction.category),
                         ),
                         const Divider(height: 1),
                         _buildDetailRow(
                           icon: Icons.calendar_today,
-                          label: 'Date',
+                          label: context.l10n.date,
                           value: _capitalize(dateFormat.format(transaction.date)),
                         ),
                         if (transaction.subcategory != null) ...[
                           const Divider(height: 1),
                           _buildDetailRow(
                             icon: Icons.label,
-                            label: 'Sous-catégorie',
+                            label: context.l10n.category,
                             value: transaction.subcategory!,
                           ),
                         ],
@@ -129,7 +130,7 @@ class TransactionDetailScreen extends ConsumerWidget {
                           const Divider(height: 1),
                           _buildDetailRow(
                             icon: Icons.description,
-                            label: 'Description',
+                            label: context.l10n.description,
                             value: transaction.description!,
                           ),
                         ],
@@ -137,7 +138,7 @@ class TransactionDetailScreen extends ConsumerWidget {
                           const Divider(height: 1),
                           _buildDetailRow(
                             icon: Icons.repeat,
-                            label: 'Type',
+                            label: context.l10n.category,
                             value: 'Transaction récurrente',
                             valueColor: AuraColors.auraAmber,
                           ),
@@ -156,7 +157,7 @@ class TransactionDetailScreen extends ConsumerWidget {
                           _buildDetailRow(
                             icon: _getSourceIcon(transaction.source),
                             label: 'Source',
-                            value: _getSourceLabel(transaction.source),
+                            value: _getSourceLabel(context, transaction.source),
                           ),
                         ],
                       ],
@@ -170,7 +171,7 @@ class TransactionDetailScreen extends ConsumerWidget {
                     children: [
                       Expanded(
                         child: AuraButton(
-                          label: 'Modifier',
+                          label: context.l10n.edit,
                           onPressed: () {
                             HapticService.lightTap();
                             // TODO: Navigation vers écran d'édition
@@ -181,7 +182,7 @@ class TransactionDetailScreen extends ConsumerWidget {
                       const SizedBox(width: AuraDimensions.spaceM),
                       Expanded(
                         child: AuraButton(
-                          label: 'Supprimer',
+                          label: context.l10n.delete,
                           onPressed: () => _confirmDelete(context, ref, transaction),
                           type: AuraButtonType.danger,
                         ),
@@ -210,7 +211,7 @@ class TransactionDetailScreen extends ConsumerWidget {
           ),
           Expanded(
             child: Text(
-              'Détail',
+              context.l10n.details,
               style: AuraTypography.h3.copyWith(color: AuraColors.auraTextDark),
               textAlign: TextAlign.center,
             ),
@@ -234,33 +235,33 @@ class TransactionDetailScreen extends ConsumerWidget {
               }
             },
             itemBuilder: (context) => [
-              const PopupMenuItem(
+              PopupMenuItem(
                 value: 'edit',
                 child: Row(
                   children: [
-                    Icon(Icons.edit),
-                    SizedBox(width: 8),
-                    Text('Modifier'),
+                    const Icon(Icons.edit),
+                    const SizedBox(width: 8),
+                    Text(context.l10n.edit),
                   ],
                 ),
               ),
-              const PopupMenuItem(
+              PopupMenuItem(
                 value: 'duplicate',
                 child: Row(
                   children: [
-                    Icon(Icons.copy),
-                    SizedBox(width: 8),
-                    Text('Dupliquer'),
+                    const Icon(Icons.copy),
+                    const SizedBox(width: 8),
+                    Text(context.l10n.duplicate),
                   ],
                 ),
               ),
-              const PopupMenuItem(
+              PopupMenuItem(
                 value: 'share',
                 child: Row(
                   children: [
-                    Icon(Icons.share),
-                    SizedBox(width: 8),
-                    Text('Partager'),
+                    const Icon(Icons.share),
+                    const SizedBox(width: 8),
+                    Text(context.l10n.share),
                   ],
                 ),
               ),
@@ -320,7 +321,7 @@ class TransactionDetailScreen extends ConsumerWidget {
           ),
           const SizedBox(height: AuraDimensions.spaceM),
           Text(
-            'Erreur',
+            context.l10n.errorOccurred,
             style: AuraTypography.h3.copyWith(color: AuraColors.auraTextDark),
           ),
           const SizedBox(height: AuraDimensions.spaceS),
@@ -333,7 +334,7 @@ class TransactionDetailScreen extends ConsumerWidget {
           const SizedBox(height: AuraDimensions.spaceL),
           ElevatedButton(
             onPressed: () => context.goBack(),
-            child: const Text('Retour'),
+            child: Text(context.l10n.back),
           ),
         ],
       ),
@@ -349,11 +350,11 @@ class TransactionDetailScreen extends ConsumerWidget {
           borderRadius: BorderRadius.circular(AuraDimensions.radiusXL),
         ),
         title: Text(
-          'Supprimer la transaction ?',
+          context.l10n.deleteTransaction,
           style: AuraTypography.h4.copyWith(color: AuraColors.auraTextDark),
         ),
         content: Text(
-          'Cette action est irréversible.',
+          context.l10n.deleteTransactionConfirm,
           style: AuraTypography.bodyMedium.copyWith(
             color: AuraColors.auraTextDarkSecondary,
           ),
@@ -362,7 +363,7 @@ class TransactionDetailScreen extends ConsumerWidget {
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              'Annuler',
+              context.l10n.cancel,
               style: AuraTypography.labelMedium.copyWith(
                 color: AuraColors.auraTextDarkSecondary,
               ),
@@ -382,7 +383,7 @@ class TransactionDetailScreen extends ConsumerWidget {
               backgroundColor: AuraColors.auraRed,
             ),
             child: Text(
-              'Supprimer',
+              context.l10n.delete,
               style: AuraTypography.labelMedium.copyWith(color: Colors.white),
             ),
           ),
@@ -459,16 +460,16 @@ class TransactionDetailScreen extends ConsumerWidget {
     }
   }
 
-  String _getSourceLabel(String source) {
+  String _getSourceLabel(BuildContext context, String source) {
     switch (source) {
       case 'scan':
-        return 'Scan IA';
+        return context.l10n.sourceScan;
       case 'voice':
-        return 'Reconnaissance vocale';
+        return context.l10n.sourceVoice;
       case 'import':
-        return 'Import';
+        return context.l10n.sourceImport;
       default:
-        return 'Manuel';
+        return context.l10n.sourceManual;
     }
   }
 }

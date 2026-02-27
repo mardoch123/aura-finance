@@ -5,6 +5,7 @@ import '../../../core/theme/aura_colors.dart';
 import '../../../core/theme/aura_dimensions.dart';
 import '../../../core/theme/aura_typography.dart';
 import '../../../core/haptics/haptic_service.dart';
+import '../../../core/extensions/app_localizations_extension.dart';
 import 'coach_chat_provider.dart';
 import '../domain/coach_message.dart';
 import 'widgets/coach_chat_header.dart';
@@ -190,21 +191,21 @@ class _CoachChatScreenState extends ConsumerState<CoachChatScreen> {
           ),
           const SizedBox(height: AuraDimensions.spaceL),
           Text(
-            'Coach Aura',
+            context.l10n.coachTitle,
             style: AuraTypography.h3.copyWith(
               color: AuraColors.auraTextDark,
             ),
           ),
           const SizedBox(height: AuraDimensions.spaceS),
           Text(
-            'Votre conseiller financier personnel',
+            context.l10n.coachSubtitle,
             style: AuraTypography.bodyMedium.copyWith(
               color: AuraColors.auraTextDarkSecondary,
             ),
           ),
           const SizedBox(height: AuraDimensions.spaceXL),
           Text(
-            'Posez-moi des questions sur vos finances,\nje suis là pour vous aider !',
+            context.l10n.coachWelcome,
             textAlign: TextAlign.center,
             style: AuraTypography.bodyMedium.copyWith(
               color: AuraColors.auraTextDarkSecondary,
@@ -233,7 +234,7 @@ class _CoachChatScreenState extends ConsumerState<CoachChatScreen> {
           ),
           const SizedBox(width: AuraDimensions.spaceXS),
           Text(
-            'Coach hors ligne - historique disponible',
+            context.l10n.coachOffline,
             style: AuraTypography.labelSmall.copyWith(
               color: AuraColors.auraTextDarkSecondary,
             ),
@@ -318,7 +319,7 @@ class _CoachChatScreenState extends ConsumerState<CoachChatScreen> {
               
               // Title
               Text(
-                'Options',
+                context.l10n.options,
                 style: AuraTypography.h4.copyWith(
                   color: AuraColors.auraTextDark,
                 ),
@@ -333,7 +334,7 @@ class _CoachChatScreenState extends ConsumerState<CoachChatScreen> {
                   color: AuraColors.auraRed,
                 ),
                 title: Text(
-                  'Vider la conversation',
+                  context.l10n.clearConversation,
                   style: AuraTypography.bodyMedium.copyWith(
                     color: AuraColors.auraRed,
                   ),
@@ -350,13 +351,13 @@ class _CoachChatScreenState extends ConsumerState<CoachChatScreen> {
                   color: AuraColors.auraTextDark,
                 ),
                 title: Text(
-                  'Langue du coach',
+                  context.l10n.coachLanguage,
                   style: AuraTypography.bodyMedium.copyWith(
                     color: AuraColors.auraTextDark,
                   ),
                 ),
                 trailing: Text(
-                  'Français',
+                  context.l10n.french,
                   style: AuraTypography.labelMedium.copyWith(
                     color: AuraColors.auraTextDarkSecondary,
                   ),
@@ -384,13 +385,13 @@ class _CoachChatScreenState extends ConsumerState<CoachChatScreen> {
           borderRadius: BorderRadius.circular(AuraDimensions.radiusXL),
         ),
         title: Text(
-          'Vider la conversation ?',
+          context.l10n.clearConversationConfirm,
           style: AuraTypography.h4.copyWith(
             color: AuraColors.auraTextDark,
           ),
         ),
         content: Text(
-          'Cette action est irréversible. L\'historique sera supprimé.',
+          context.l10n.clearConversationWarning,
           style: AuraTypography.bodyMedium.copyWith(
             color: AuraColors.auraTextDarkSecondary,
           ),
@@ -399,7 +400,7 @@ class _CoachChatScreenState extends ConsumerState<CoachChatScreen> {
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              'Annuler',
+              context.l10n.cancel,
               style: AuraTypography.labelLarge.copyWith(
                 color: AuraColors.auraTextDarkSecondary,
               ),
@@ -415,7 +416,7 @@ class _CoachChatScreenState extends ConsumerState<CoachChatScreen> {
               backgroundColor: AuraColors.auraRed,
               foregroundColor: AuraColors.auraTextPrimary,
             ),
-            child: const Text('Vider'),
+            child: Text(context.l10n.clear),
           ),
         ],
       ),

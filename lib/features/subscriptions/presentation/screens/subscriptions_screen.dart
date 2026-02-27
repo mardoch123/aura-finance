@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
+import '../../../../core/extensions/app_localizations_extension.dart';
 import '../../../../core/haptics/haptic_service.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/theme/aura_colors.dart';
@@ -70,11 +71,11 @@ class _SubscriptionsScreenState extends ConsumerState<SubscriptionsScreen> {
             child: Column(
               children: [
                 Text(
-                  'Abonnements',
+                  context.l10n.subscriptions,
                   style: AuraTypography.h3.copyWith(color: AuraColors.auraTextDark),
                 ),
                 Text(
-                  'Le Gardien 🧛',
+                  '${context.l10n.theGuardian} 🧛',
                   style: AuraTypography.bodySmall.copyWith(
                     color: AuraColors.auraTextDarkSecondary,
                   ),
@@ -120,7 +121,7 @@ class _SubscriptionsScreenState extends ConsumerState<SubscriptionsScreen> {
                     ),
                   ),
                   Text(
-                    'Abonnements',
+                    context.l10n.subscriptions,
                     style: AuraTypography.bodySmall.copyWith(
                       color: AuraColors.auraTextDarkSecondary,
                     ),
@@ -142,7 +143,7 @@ class _SubscriptionsScreenState extends ConsumerState<SubscriptionsScreen> {
                     ),
                   ),
                   Text(
-                    '/mois',
+                    context.l10n.perMonth,
                     style: AuraTypography.bodySmall.copyWith(
                       color: AuraColors.auraTextDarkSecondary,
                     ),
@@ -165,7 +166,7 @@ class _SubscriptionsScreenState extends ConsumerState<SubscriptionsScreen> {
                       ),
                     ),
                     Text(
-                      'Hausses',
+                      context.l10n.increases,
                       style: AuraTypography.bodySmall.copyWith(
                         color: AuraColors.auraTextDarkSecondary,
                       ),
@@ -207,7 +208,9 @@ class _SubscriptionsScreenState extends ConsumerState<SubscriptionsScreen> {
               const SizedBox(width: AuraDimensions.spaceS),
               Expanded(
                 child: Text(
-                  '$vampireCount vampire${vampireCount > 1 ? 's' : ''} détecté${vampireCount > 1 ? 's' : ''}',
+                  vampireCount == 1 
+                      ? context.l10n.vampiresDetected_one.replaceAll('{count}', vampireCount.toString())
+                      : context.l10n.vampiresDetected_other.replaceAll('{count}', vampireCount.toString()),
                   style: AuraTypography.labelMedium.copyWith(
                     color: _showVampiresOnly
                         ? AuraColors.auraRed
@@ -271,12 +274,12 @@ class _SubscriptionsScreenState extends ConsumerState<SubscriptionsScreen> {
           ),
           const SizedBox(height: AuraDimensions.spaceL),
           Text(
-            'Aucun abonnement',
+            context.l10n.noSubscription,
             style: AuraTypography.h4.copyWith(color: AuraColors.auraTextDark),
           ),
           const SizedBox(height: AuraDimensions.spaceS),
           Text(
-            'Ajoutez vos abonnements pour suivre les hausses de prix',
+            context.l10n.addSubscriptionHint,
             style: AuraTypography.bodyMedium.copyWith(
               color: AuraColors.auraTextDarkSecondary,
             ),
@@ -296,7 +299,7 @@ class _SubscriptionsScreenState extends ConsumerState<SubscriptionsScreen> {
       backgroundColor: AuraColors.auraAmber,
       icon: const Icon(Icons.add, color: Colors.white),
       label: Text(
-        'Ajouter',
+        context.l10n.add,
         style: AuraTypography.labelMedium.copyWith(color: Colors.white),
       ),
     );
@@ -315,14 +318,13 @@ class _SubscriptionsScreenState extends ConsumerState<SubscriptionsScreen> {
             const Text('🧛', style: TextStyle(fontSize: 24)),
             const SizedBox(width: 8),
             Text(
-              'Le Gardien',
+              context.l10n.theGuardian,
               style: AuraTypography.h4.copyWith(color: AuraColors.auraTextDark),
             ),
           ],
         ),
         content: Text(
-          'Le Gardien surveille vos abonnements et détecte automatiquement les hausses de prix cachées. '
-          'Vous recevez une alerte dès qu\'un service augmente ses tarifs.',
+          context.l10n.theGuardianDesc,
           style: AuraTypography.bodyMedium.copyWith(
             color: AuraColors.auraTextDarkSecondary,
           ),
@@ -331,7 +333,7 @@ class _SubscriptionsScreenState extends ConsumerState<SubscriptionsScreen> {
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              'Compris',
+              context.l10n.understood,
               style: AuraTypography.labelMedium.copyWith(
                 color: AuraColors.auraAmber,
               ),
@@ -504,7 +506,7 @@ class SubscriptionCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'Prochain prélèvement: ${dateFormat.format(subscription.nextBillingDate)}',
+                      '${context.l10n.nextBilling}: ${dateFormat.format(subscription.nextBillingDate)}',
                       style: AuraTypography.bodySmall.copyWith(
                         color: AuraColors.auraTextDarkSecondary,
                       ),
@@ -527,7 +529,7 @@ class SubscriptionCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '/${subscription.billingCycle == 'monthly' ? 'mois' : 'an'}',
+                    subscription.billingCycle == 'monthly' ? context.l10n.perMonth : context.l10n.perYear,
                     style: AuraTypography.caption.copyWith(
                       color: AuraColors.auraTextDarkSecondary,
                     ),
@@ -556,8 +558,10 @@ class SubscriptionCard extends StatelessWidget {
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      'Hausse de ${subscription.increasePercentage?.toStringAsFixed(0)}% détectée '
-                      '(+${(subscription.newAmount! - subscription.oldAmount!).toStringAsFixed(2)}€)',
+                      context.l10n.increaseDetected(
+                        subscription.increasePercentage?.toStringAsFixed(0) ?? '0',
+                        (subscription.newAmount! - subscription.oldAmount!).toStringAsFixed(2),
+                      ),
                       style: AuraTypography.bodySmall.copyWith(
                         color: AuraColors.auraRed,
                       ),

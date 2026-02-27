@@ -1,0 +1,6 @@
+[functions.categorize-transaction]
+enabled = true
+verify_jwt = true
+
+[functions.categorize-transaction.secrets]
+OPENAI_API_KEY = "YOUR_OPENAI_API_KEY"

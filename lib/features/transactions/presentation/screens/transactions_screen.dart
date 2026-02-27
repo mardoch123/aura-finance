@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../core/extensions/app_localizations_extension.dart';
 import '../../../../core/haptics/haptic_service.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/theme/aura_colors.dart';
@@ -110,7 +111,7 @@ class _TransactionsScreenState extends ConsumerState<TransactionsScreen> {
           ),
           Expanded(
             child: Text(
-              'Transactions',
+              context.l10n.transactions,
               style: AuraTypography.h3.copyWith(color: AuraColors.auraTextDark),
               textAlign: TextAlign.center,
             ),
@@ -146,7 +147,7 @@ class _TransactionsScreenState extends ConsumerState<TransactionsScreen> {
             ),
             const SizedBox(height: AuraDimensions.spaceM),
             Text(
-              'Erreur de chargement',
+              context.l10n.loadingError,
               style: AuraTypography.h4.copyWith(color: AuraColors.auraTextDark),
             ),
             const SizedBox(height: AuraDimensions.spaceS),
@@ -163,7 +164,7 @@ class _TransactionsScreenState extends ConsumerState<TransactionsScreen> {
                 ref.read(transactionsNotifierProvider.notifier).loadTransactions();
               },
               icon: const Icon(Icons.refresh),
-              label: const Text('Réessayer'),
+              label: Text(context.l10n.retry),
             ),
           ],
         ),
@@ -224,12 +225,12 @@ class _TransactionsScreenState extends ConsumerState<TransactionsScreen> {
           ),
           const SizedBox(height: AuraDimensions.spaceL),
           Text(
-            'Aucune transaction',
+            context.l10n.noTransactions,
             style: AuraTypography.h3.copyWith(color: AuraColors.auraTextDark),
           ),
           const SizedBox(height: AuraDimensions.spaceS),
           Text(
-            'Commencez par ajouter votre première transaction',
+            context.l10n.addFirstTransaction,
             style: AuraTypography.bodyMedium.copyWith(
               color: AuraColors.auraTextDarkSecondary,
             ),
@@ -255,7 +256,7 @@ class _TransactionsScreenState extends ConsumerState<TransactionsScreen> {
       backgroundColor: AuraColors.auraAmber,
       icon: const Icon(Icons.add, color: Colors.white),
       label: Text(
-        'Ajouter',
+        context.l10n.add,
         style: AuraTypography.labelMedium.copyWith(color: Colors.white),
       ),
     );
@@ -270,11 +271,11 @@ class _TransactionsScreenState extends ConsumerState<TransactionsScreen> {
           borderRadius: BorderRadius.circular(AuraDimensions.radiusXL),
         ),
         title: Text(
-          'Supprimer la transaction ?',
+          context.l10n.deleteTransaction,
           style: AuraTypography.h4.copyWith(color: AuraColors.auraTextDark),
         ),
         content: Text(
-          'Cette action est irréversible.',
+          context.l10n.deleteTransactionConfirm,
           style: AuraTypography.bodyMedium.copyWith(
             color: AuraColors.auraTextDarkSecondary,
           ),
@@ -283,7 +284,7 @@ class _TransactionsScreenState extends ConsumerState<TransactionsScreen> {
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              'Annuler',
+              context.l10n.cancel,
               style: AuraTypography.labelMedium.copyWith(
                 color: AuraColors.auraTextDarkSecondary,
               ),
@@ -299,7 +300,7 @@ class _TransactionsScreenState extends ConsumerState<TransactionsScreen> {
               backgroundColor: AuraColors.auraRed,
             ),
             child: Text(
-              'Supprimer',
+              context.l10n.delete,
               style: AuraTypography.labelMedium.copyWith(color: Colors.white),
             ),
           ),
@@ -367,7 +368,7 @@ class _SearchBottomSheetState extends ConsumerState<_SearchBottomSheet> {
               controller: _controller,
               autofocus: true,
               decoration: InputDecoration(
-                hintText: 'Rechercher une transaction...',
+                hintText: context.l10n.searchTransaction,
                 prefixIcon: const Icon(Icons.search),
                 suffixIcon: _controller.text.isNotEmpty
                     ? IconButton(
@@ -392,7 +393,7 @@ class _SearchBottomSheetState extends ConsumerState<_SearchBottomSheet> {
                 if (transactions.isEmpty && _controller.text.isNotEmpty) {
                   return Center(
                     child: Text(
-                      'Aucun résultat',
+                      context.l10n.noResults,
                       style: AuraTypography.bodyMedium.copyWith(
                         color: AuraColors.auraTextDarkSecondary,
                       ),
@@ -417,7 +418,7 @@ class _SearchBottomSheetState extends ConsumerState<_SearchBottomSheet> {
               ),
               error: (_, __) => Center(
                 child: Text(
-                  'Erreur de recherche',
+                  context.l10n.searchError,
                   style: AuraTypography.bodyMedium.copyWith(
                     color: AuraColors.auraRed,
                   ),

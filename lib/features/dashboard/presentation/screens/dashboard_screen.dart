@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../../core/extensions/app_localizations_extension.dart';
 import '../../../../core/theme/aura_colors.dart';
 import '../../../../core/theme/aura_dimensions.dart';
 import '../../../../core/theme/aura_typography.dart';
@@ -13,6 +14,8 @@ import '../widgets/prediction_chart.dart';
 import '../widgets/insight_card.dart';
 import '../widgets/recent_transactions_list.dart';
 import '../widgets/goals_progress_section.dart';
+import '../../../shared_accounts/presentation/widgets/shared_account_card.dart';
+import '../../../shared_accounts/data/models/shared_account_model.dart';
 
 /// Écran principal du Dashboard avec SliverAppBar collapsible
 class DashboardScreen extends ConsumerStatefulWidget {
@@ -41,7 +44,9 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
     final unreadCountAsync = ref.watch(unreadInsightsCountProvider);
 
     return Scaffold(
-      body: Container(
+      body: Stack(
+        children: [
+          Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -89,8 +94,10 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
             ),
           ],
         ),
-      ),
-    );
+        // Félix Compagnon Flottant
+        const FelixFloatingCompanion(),
+      ],
+    ));
   }
 
   Widget _buildBackgroundCircles() {
@@ -257,7 +264,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
             children: [
               // Label
               Text(
-                'SOLDE TOTAL',
+                context.l10n.totalBalanceLabel,
                 style: AuraTypography.labelSmall.copyWith(
                   color: AuraColors.auraTextDarkSecondary,
                   letterSpacing: 2,
@@ -306,7 +313,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(
-                        '${state.monthlyDelta >= 0 ? '+' : ''}${state.monthlyDelta.toStringAsFixed(0)}€ ce mois',
+                        '${state.monthlyDelta >= 0 ? '+' : ''}${state.monthlyDelta.toStringAsFixed(0)}€ ${context.l10n.thisMonth}',
                         style: AuraTypography.labelMedium.copyWith(
                           color: state.monthlyDelta >= 0
                               ? AuraColors.auraGreen
@@ -360,7 +367,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Actions rapides',
+            context.l10n.quickActions,
             style: AuraTypography.labelSmall.copyWith(
               color: AuraColors.auraTextDarkSecondary,
               letterSpacing: 1.2,
@@ -372,7 +379,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
               Expanded(
                 child: _QuickActionButton(
                   icon: Icons.smart_toy,
-                  label: 'Coach IA',
+                  label: context.l10n.aiCoach,
                   color: AuraColors.auraAmber,
                   onTap: () {
                     HapticService.lightTap();
@@ -384,7 +391,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
               Expanded(
                 child: _QuickActionButton(
                   icon: Icons.account_balance_wallet,
-                  label: 'Comptes',
+                  label: context.l10n.accounts,
                   color: AuraColors.auraDeep,
                   onTap: () {
                     HapticService.lightTap();
@@ -396,11 +403,179 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
               Expanded(
                 child: _QuickActionButton(
                   icon: Icons.savings,
-                  label: 'Objectifs',
+                  label: context.l10n.goals,
                   color: AuraColors.auraGreen,
                   onTap: () {
                     HapticService.lightTap();
                     context.goToBudgets();
+                  },
+                ),
+              ),
+              const SizedBox(width: AuraDimensions.spaceS),
+              Expanded(
+                child: _QuickActionButton(
+                  icon: Icons.spa,
+                  label: 'Zen Mode',
+                  color: AuraColors.auraGreen,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToZenMode();
+                  },
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: AuraDimensions.spaceS),
+          Row(
+            children: [
+              Expanded(
+                child: _QuickActionButton(
+                  icon: Icons.emoji_events,
+                  label: context.l10n.challenges,
+                  color: AuraColors.auraAmber,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToChallenges();
+                  },
+                ),
+              ),
+              const SizedBox(width: AuraDimensions.spaceS),
+              Expanded(
+                child: _QuickActionButton(
+                  icon: Icons.description,
+                  label: context.l10n.reports,
+                  color: AuraColors.auraDeep,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToReports();
+                  },
+                ),
+              ),
+              const SizedBox(width: AuraDimensions.spaceS),
+              Expanded(
+                child: _QuickActionButton(
+                  icon: Icons.subscriptions,
+                  label: context.l10n.subscriptions,
+                  color: AuraColors.auraGreen,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToSubscriptions();
+                  },
+                ),
+              ),
+              const SizedBox(width: AuraDimensions.spaceS),
+              Expanded(
+                child: _QuickActionButton(
+                  icon: Icons.group,
+                  label: 'Défis',
+                  color: AuraColors.auraRed,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToFriendChallenges();
+                  },
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: AuraDimensions.spaceS),
+          Row(
+            children: [
+              Expanded(
+                child: _QuickActionButton(
+                  icon: Icons.card_giftcard,
+                  label: context.l10n.referral,
+                  color: AuraColors.auraAmber,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToReferral();
+                  },
+                ),
+              ),
+              const SizedBox(width: AuraDimensions.spaceS),
+              Expanded(
+                child: _QuickActionButton(
+                  icon: Icons.ios_share,
+                  label: 'Stories',
+                  color: AuraColors.auraAccentGold,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToFinancialStories();
+                  },
+                ),
+              ),
+              const SizedBox(width: AuraDimensions.spaceS),
+              Expanded(
+                child: _QuickActionButton(
+                  icon: Icons.compare_arrows,
+                  label: context.l10n.reconciliation,
+                  color: AuraColors.auraGreen,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToReconciliation();
+                  },
+                ),
+              ),
+              const SizedBox(width: AuraDimensions.spaceS),
+              Expanded(
+                child: _QuickActionButton(
+                  icon: Icons.calculate,
+                  label: context.l10n.calculators,
+                  color: AuraColors.auraAccentGold,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToCalculators();
+                  },
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: AuraDimensions.spaceS),
+          Row(
+            children: [
+              Expanded(
+                child: _QuickActionButton(
+                  icon: Icons.account_balance_wallet,
+                  label: context.l10n.wealth,
+                  color: AuraColors.auraAmber,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToWealth();
+                  },
+                ),
+              ),
+              const SizedBox(width: AuraDimensions.spaceS),
+              Expanded(
+                child: _QuickActionButton(
+                  icon: Icons.trending_up,
+                  label: context.l10n.investment,
+                  color: AuraColors.auraDeep,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToWealth();
+                  },
+                ),
+              ),
+              const SizedBox(width: AuraDimensions.spaceS),
+              Expanded(
+                child: _QuickActionButton(
+                  icon: Icons.elderly,
+                  label: context.l10n.retirement,
+                  color: AuraColors.auraGreen,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToWealth();
+                  },
+                ),
+              ),
+              const SizedBox(width: AuraDimensions.spaceS),
+              Expanded(
+                child: _QuickActionButton(
+                  icon: Icons.more_horiz,
+                  label: context.l10n.more,
+                  color: AuraColors.auraAccentGold,
+                  onTap: () {
+                    HapticService.lightTap();
+                    // Show more options
                   },
                 ),
               ),
@@ -446,7 +621,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
             child: Row(
               children: [
                 Text(
-                  'Insights IA',
+                  context.l10n.aiInsights,
                   style: AuraTypography.h4.copyWith(
                     color: AuraColors.auraTextDark,
                     fontWeight: FontWeight.w600,
@@ -500,6 +675,21 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
           const SizedBox(height: AuraDimensions.spaceL),
         ],
         
+        // Comptes partagés (affichés si présents)
+        _buildSharedAccountsPreview(),
+        
+        const SizedBox(height: AuraDimensions.spaceL),
+        
+        // Features spéciales (Félix réactif, Zen mode, etc.)
+        _buildSpecialFeatures(),
+        
+        const SizedBox(height: AuraDimensions.spaceL),
+        
+        // Features spéciales (Félix réactif, Zen mode, etc.)
+        _buildSpecialFeatures(),
+        
+        const SizedBox(height: AuraDimensions.spaceL),
+        
         // Transactions récentes
         RecentTransactionsList(
           transactions: state.recentTransactions,
@@ -514,6 +704,115 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
         ),
         
         const SizedBox(height: AuraDimensions.spaceXL),
+      ],
+    );
+  }
+
+  /// Section aperçu des comptes partagés
+  Widget _buildSharedAccountsPreview() {
+    // TODO: Connect to actual provider when generated
+    final mockAccounts = <SharedAccount>[]; // Placeholder
+    
+    if (mockAccounts.isEmpty) {
+      // Afficher une carte d'invitation à créer un compte partagé
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: AuraDimensions.spaceM),
+        child: GestureDetector(
+          onTap: () {
+            HapticService.lightTap();
+            context.goToSharedAccounts();
+          },
+          child: GlassCard(
+            borderRadius: AuraDimensions.radiusXL,
+            padding: const EdgeInsets.all(AuraDimensions.spaceM),
+            child: Row(
+              children: [
+                Container(
+                  width: 56,
+                  height: 56,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [AuraColors.auraAccentGold, AuraColors.auraAmber],
+                    ),
+                    borderRadius: BorderRadius.circular(AuraDimensions.radiusL),
+                  ),
+                  child: const Icon(
+                    Icons.people_outline,
+                    color: Colors.white,
+                    size: 28,
+                  ),
+                ),
+                const SizedBox(width: AuraDimensions.spaceM),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Comptes Partagés',
+                        style: AuraTypography.labelLarge.copyWith(
+                          color: AuraColors.auraTextDark,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Gérez vos finances en couple, famille ou colocation',
+                        style: AuraTypography.bodySmall.copyWith(
+                          color: AuraColors.auraTextDarkSecondary,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(AuraDimensions.spaceS),
+                  decoration: BoxDecoration(
+                    color: AuraColors.auraAmber.withOpacity(0.15),
+                    borderRadius: BorderRadius.circular(AuraDimensions.radiusM),
+                  ),
+                  child: const Icon(
+                    Icons.add,
+                    color: AuraColors.auraAmber,
+                    size: 20,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+    // Afficher les comptes partagés existants
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: AuraDimensions.spaceM),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                context.l10n.sharedAccounts,
+                style: AuraTypography.h4.copyWith(
+                  color: AuraColors.auraTextDark,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              TextButton(
+                onPressed: () => context.goToSharedAccounts(),
+                child: Text(
+                  context.l10n.viewAll,
+                  style: AuraTypography.labelMedium.copyWith(
+                    color: AuraColors.auraDeep,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: AuraDimensions.spaceM),
+        // TODO: Connect to actual provider when shared accounts are implemented
       ],
     );
   }
@@ -558,7 +857,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
             ),
             const SizedBox(height: AuraDimensions.spaceM),
             Text(
-              'Oups ! Une erreur est survenue',
+              context.l10n.errorOccurred,
               style: AuraTypography.h4.copyWith(
                 color: AuraColors.auraTextDark,
               ),
@@ -576,7 +875,150 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
             ElevatedButton.icon(
               onPressed: _onRefresh,
               icon: const Icon(Icons.refresh),
-              label: const Text('Réessayer'),
+              label: Text(context.l10n.retry),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Section des features spéciales avec Félix
+  Widget _buildSpecialFeatures() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: AuraDimensions.spaceM),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Expériences spéciales',
+            style: AuraTypography.labelSmall.copyWith(
+              color: AuraColors.auraTextDarkSecondary,
+              letterSpacing: 1.2,
+            ),
+          ),
+          const SizedBox(height: AuraDimensions.spaceM),
+          Row(
+            children: [
+              // Félix Compagnon Flottant
+              Expanded(
+                child: _SpecialFeatureCard(
+                  icon: Icons.pets,
+                  label: 'Félix Compagnon',
+                  description: 'Ta mascotte réactive',
+                  color: AuraColors.auraAmber,
+                  onTap: () {
+                    HapticService.lightTap();
+                    // Activer/désactiver Félix
+                  },
+                ),
+              ),
+              const SizedBox(width: AuraDimensions.spaceS),
+              // Mode Zen
+              Expanded(
+                child: _SpecialFeatureCard(
+                  icon: Icons.spa,
+                  label: 'Mode Zen',
+                  description: 'Visualisation apaisante',
+                  color: AuraColors.auraGreen,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToZenMode();
+                  },
+                ),
+              ),
+              const SizedBox(width: AuraDimensions.spaceS),
+              // Défis entre amis
+              Expanded(
+                child: _SpecialFeatureCard(
+                  icon: Icons.group,
+                  label: 'Défis',
+                  description: 'Qui économise le plus ?',
+                  color: AuraColors.auraRed,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToFriendChallenges();
+                  },
+                ),
+              ),
+              const SizedBox(width: AuraDimensions.spaceS),
+              // Stories
+              Expanded(
+                child: _SpecialFeatureCard(
+                  icon: Icons.ios_share,
+                  label: 'Stories',
+                  description: 'Ton récap hebdo',
+                  color: AuraColors.auraAccentGold,
+                  onTap: () {
+                    HapticService.lightTap();
+                    context.goToFinancialStories();
+                  },
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Carte pour une feature spéciale
+class _SpecialFeatureCard extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final String description;
+  final Color color;
+  final VoidCallback onTap;
+
+  const _SpecialFeatureCard({
+    required this.icon,
+    required this.label,
+    required this.description,
+    required this.color,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: GlassCard(
+        padding: const EdgeInsets.all(AuraDimensions.spaceS),
+        child: Column(
+          children: [
+            Container(
+              width: 48,
+              height: 48,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [color, color.withOpacity(0.7)],
+                ),
+                borderRadius: BorderRadius.circular(AuraDimensions.radiusM),
+              ),
+              child: Icon(
+                icon,
+                color: Colors.white,
+                size: 24,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              label,
+              style: AuraTypography.labelSmall.copyWith(
+                color: AuraColors.auraTextDark,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 4),
+            Text(
+              description,
+              style: AuraTypography.bodySmall.copyWith(
+                color: AuraColors.auraTextDarkSecondary,
+              ),
+              textAlign: TextAlign.center,
+              maxLines: 2,
             ),
           ],
         ),

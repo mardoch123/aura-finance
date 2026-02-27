@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../core/extensions/app_localizations_extension.dart';
 import '../../../../core/haptics/haptic_service.dart';
+import '../../../../core/router/app_router.dart';
+import '../../../../core/services/locale_service.dart';
 import '../../../../core/theme/aura_colors.dart';
 import '../../../../core/theme/aura_dimensions.dart';
 import '../../../../core/theme/aura_typography.dart';
@@ -26,25 +29,52 @@ class SettingsScreen extends ConsumerWidget {
                 padding: const EdgeInsets.all(AuraDimensions.spaceM),
                 child: Column(
                   children: [
+                    // Section Outils
+                    _buildSectionTitle(context.l10n.tools),
+                    _buildSettingsCard([
+                      _SettingItem(
+                        icon: Icons.account_balance,
+                        title: context.l10n.bankSync,
+                        subtitle: context.l10n.bankSyncDesc,
+                        onTap: () => context.goToBanking(),
+                      ),
+                      _SettingItem(
+                        icon: Icons.calculate_outlined,
+                        title: context.l10n.calculator,
+                        subtitle: context.l10n.calculatorDesc,
+                        onTap: () => _navigateToCalculators(context),
+                      ),
+                      _SettingItem(
+                        icon: Icons.currency_exchange,
+                        title: context.l10n.converter,
+                        subtitle: context.l10n.converterDesc,
+                        onTap: () => _navigateToCurrencyConverter(context),
+                      ),
+                    ]),
+                    
+                    const SizedBox(height: AuraDimensions.spaceL),
+
                     // Section Général
-                    _buildSectionTitle('Général'),
+                    _buildSectionTitle(context.l10n.general),
                     _buildSettingsCard([
                       _SettingItem(
                         icon: Icons.notifications_outlined,
-                        title: 'Notifications',
-                        subtitle: 'Gérer les alertes',
+                        title: context.l10n.notifications,
+                        subtitle: context.l10n.notificationsDesc,
                         onTap: () => _showNotificationSettings(context),
                       ),
                       _SettingItem(
                         icon: Icons.lock_outline,
-                        title: 'Confidentialité',
-                        subtitle: 'Sécurité et accès',
-                        onTap: () => _showPrivacySettings(context),
+                        title: context.l10n.privacySettings,
+                        subtitle: context.l10n.privacyDesc,
+                        onTap: () => _navigateToPrivacy(context),
                       ),
                       _SettingItem(
                         icon: Icons.language,
-                        title: 'Langue',
-                        subtitle: 'Français',
+                        title: context.l10n.language,
+                        subtitle: LocaleService.instance.getLocaleName(
+                          LocaleService.instance.currentLocale,
+                        ),
                         onTap: () => _showLanguageSettings(context),
                       ),
                     ]),
@@ -52,18 +82,18 @@ class SettingsScreen extends ConsumerWidget {
                     const SizedBox(height: AuraDimensions.spaceL),
 
                     // Section Apparence
-                    _buildSectionTitle('Apparence'),
+                    _buildSectionTitle(context.l10n.appearance),
                     _buildSettingsCard([
                       _SettingItem(
                         icon: Icons.palette_outlined,
-                        title: 'Thème',
-                        subtitle: 'Clair',
+                        title: context.l10n.theme,
+                        subtitle: context.l10n.light,
                         onTap: () => _showThemeSettings(context),
                       ),
                       _SettingItem(
                         icon: Icons.format_size,
-                        title: 'Taille du texte',
-                        subtitle: 'Normale',
+                        title: context.l10n.textSize,
+                        subtitle: context.l10n.normal,
                         onTap: () {},
                       ),
                     ]),
@@ -71,24 +101,24 @@ class SettingsScreen extends ConsumerWidget {
                     const SizedBox(height: AuraDimensions.spaceL),
 
                     // Section Données
-                    _buildSectionTitle('Données'),
+                    _buildSectionTitle(context.l10n.data),
                     _buildSettingsCard([
                       _SettingItem(
                         icon: Icons.backup_outlined,
-                        title: 'Sauvegarde',
-                        subtitle: 'Dernière: Aujourd\'hui',
+                        title: context.l10n.backup,
+                        subtitle: context.l10n.lastBackupToday,
                         onTap: () {},
                       ),
                       _SettingItem(
                         icon: Icons.download_outlined,
-                        title: 'Exporter les données',
-                        subtitle: 'CSV, PDF',
+                        title: context.l10n.exportData,
+                        subtitle: context.l10n.exportFormats,
                         onTap: () {},
                       ),
                       _SettingItem(
                         icon: Icons.delete_outline,
-                        title: 'Supprimer les données',
-                        subtitle: 'Effacer toutes les transactions',
+                        title: context.l10n.deleteData,
+                        subtitle: context.l10n.deleteDataDesc,
                         isDanger: true,
                         onTap: () => _confirmDeleteData(context),
                       ),
@@ -97,27 +127,27 @@ class SettingsScreen extends ConsumerWidget {
                     const SizedBox(height: AuraDimensions.spaceL),
 
                     // Section À propos
-                    _buildSectionTitle('À propos'),
+                    _buildSectionTitle(context.l10n.about),
                     _buildSettingsCard([
                       _SettingItem(
                         icon: Icons.info_outline,
-                        title: 'Version',
+                        title: context.l10n.version,
                         subtitle: '1.0.0 (Build 1)',
                         onTap: null,
                       ),
                       _SettingItem(
                         icon: Icons.description_outlined,
-                        title: 'Conditions d\'utilisation',
+                        title: context.l10n.termsOfUse,
                         onTap: () {},
                       ),
                       _SettingItem(
                         icon: Icons.privacy_tip_outlined,
-                        title: 'Politique de confidentialité',
+                        title: context.l10n.privacyPolicy,
                         onTap: () {},
                       ),
                       _SettingItem(
                         icon: Icons.help_outline,
-                        title: 'Aide & Support',
+                        title: context.l10n.helpSupport,
                         onTap: () {},
                       ),
                     ]),
@@ -144,7 +174,7 @@ class SettingsScreen extends ConsumerWidget {
           ),
           Expanded(
             child: Text(
-              'Paramètres',
+              context.l10n.settings,
               style: AuraTypography.h3.copyWith(color: AuraColors.auraTextDark),
               textAlign: TextAlign.center,
             ),
@@ -233,14 +263,24 @@ class SettingsScreen extends ConsumerWidget {
     );
   }
 
-  void _showPrivacySettings(BuildContext context) {
+  void _navigateToCalculators(BuildContext context) {
     HapticService.lightTap();
-    // TODO: Navigation vers écran confidentialité
+    context.push(AppRoutes.calculators);
+  }
+  
+  void _navigateToCurrencyConverter(BuildContext context) {
+    HapticService.lightTap();
+    context.push(AppRoutes.currencyConverter);
+  }
+  
+  void _navigateToPrivacy(BuildContext context) {
+    HapticService.lightTap();
+    context.push(AppRoutes.privacySettings);
   }
 
   void _showLanguageSettings(BuildContext context) {
     HapticService.lightTap();
-    // TODO: Modal sélection langue
+    context.push('/language');
   }
 
   void _showThemeSettings(BuildContext context) {
@@ -261,14 +301,13 @@ class SettingsScreen extends ConsumerWidget {
             Icon(Icons.warning, color: AuraColors.auraRed),
             const SizedBox(width: 8),
             Text(
-              'Attention',
+              context.l10n.warning,
               style: AuraTypography.h4.copyWith(color: AuraColors.auraRed),
             ),
           ],
         ),
         content: Text(
-          'Cette action supprimera définitivement toutes vos données. '
-          'Cette opération est irréversible.',
+          context.l10n.deleteDataConfirm,
           style: AuraTypography.bodyMedium.copyWith(
             color: AuraColors.auraTextDarkSecondary,
           ),
@@ -277,7 +316,7 @@ class SettingsScreen extends ConsumerWidget {
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              'Annuler',
+              context.l10n.cancel,
               style: AuraTypography.labelMedium.copyWith(
                 color: AuraColors.auraTextDarkSecondary,
               ),
@@ -293,7 +332,7 @@ class SettingsScreen extends ConsumerWidget {
               backgroundColor: AuraColors.auraRed,
             ),
             child: Text(
-              'Supprimer',
+              context.l10n.delete,
               style: AuraTypography.labelMedium.copyWith(color: Colors.white),
             ),
           ),
@@ -347,7 +386,7 @@ class _NotificationSettingsSheet extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(AuraDimensions.spaceM),
             child: Text(
-              'Notifications',
+              context.l10n.notifications,
               style: AuraTypography.h3.copyWith(color: AuraColors.auraTextDark),
             ),
           ),
@@ -357,33 +396,33 @@ class _NotificationSettingsSheet extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: AuraDimensions.spaceM),
               children: [
                 _buildToggleTile(
-                  'Alertes de dépenses',
-                  'Notifications quand vous dépassez un budget',
+                  context.l10n.expenseAlerts,
+                  context.l10n.expenseAlertsDesc,
                   true,
                 ),
                 _buildToggleTile(
-                  'Rappels d\'abonnements',
-                  'Avant les prélèvements récurrents',
+                  context.l10n.subscriptionReminders,
+                  context.l10n.subscriptionRemindersDesc,
                   true,
                 ),
                 _buildToggleTile(
-                  'Détection de vampires',
-                  'Alertes de hausses de prix',
+                  context.l10n.vampireDetection,
+                  context.l10n.vampireDetectionDesc,
                   true,
                 ),
                 _buildToggleTile(
-                  'Prédictions financières',
-                  'Alertes de risque de découvert',
+                  context.l10n.financialPredictions,
+                  context.l10n.financialPredictionsDesc,
                   true,
                 ),
                 _buildToggleTile(
-                  'Résumé hebdomadaire',
-                  'Récapitulatif des dépenses',
+                  context.l10n.weeklySummary,
+                  context.l10n.weeklySummaryDesc,
                   false,
                 ),
                 _buildToggleTile(
-                  'Conseils du Coach IA',
-                  'Astuces personnalisées',
+                  context.l10n.coachTips,
+                  context.l10n.coachTipsDesc,
                   true,
                 ),
               ],
